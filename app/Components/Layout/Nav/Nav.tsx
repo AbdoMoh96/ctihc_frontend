@@ -1,5 +1,6 @@
 'use client'
 import React, {useEffect, useState} from 'react';
+import { FaBars } from "react-icons/fa";
 import Image from 'next/image';
 import Link from "next/link";
 
@@ -28,7 +29,7 @@ const Nav: React.FC<propTypes> = () => {
 
     return (
         <nav className="h-20">
-            <div className={`h-20 transition-all bg-zinc-800 text-white duration-500 ease-in-out flex justify-between items-center px-0 lg:px-32 sm:px-10 ${navState}`}>
+            <div className={`h-20 transition-all bg-zinc-800 text-white duration-500 ease-in-out flex justify-between items-center px-5 lg:px-32 sm:px-10 ${navState}`}>
                    <Image src='/assets/images/ctihc_logo.png' alt='ctihc_logo' height={75} width={75} />
                    <div className="hidden justify-between items-center gap-7 h-full lg:flex md:flex">
                           <Link href="#" className='h-full border-b-2 border-transparent hover:border-amber-500 flex items-center'>
@@ -63,6 +64,9 @@ const Nav: React.FC<propTypes> = () => {
                                   </Link>
                               </div>
                           </div>
+                   </div>
+                   <div className='flex justify-center align-middle md:hidden'>
+                       <FaBars size={22} />
                    </div>
             </div>
         </nav>
