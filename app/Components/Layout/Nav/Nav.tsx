@@ -1,5 +1,7 @@
 'use client'
 import React, {useEffect, useState} from 'react';
+import Image from 'next/image';
+import Link from "next/link";
 
 interface propTypes {}
 
@@ -10,10 +12,10 @@ const Nav: React.FC<propTypes> = () => {
     useEffect(() => {
         // handel scroll event animation using useState and native event listener
         document.addEventListener('scroll', () => {
-           if (window.scrollY >= 150 && window.scrollY < 200){
-               setNavState('-top-20 opacity-0');
-           }else if(window.scrollY >= 200){
-               setNavState('fixed top-0 opacity-1 bg-blue-600 w-screen text-white');
+           if (window.scrollY >= 150 && window.scrollY < 400){
+               setNavState('fixed -top-20 w-full opacity-0');
+           }else if(window.scrollY >= 400){
+               setNavState('fixed top-0 opacity-1 w-full');
            }
            else{
                setNavState('');
@@ -26,10 +28,41 @@ const Nav: React.FC<propTypes> = () => {
 
     return (
         <nav className="h-20">
-            <div className={`h-20 transition-all duration-500 ease-in-out flex justify-between items-center p-3 ${navState}`}>
-                   <h2>Logo</h2>
-                   <div>
-
+            <div className={`h-20 transition-all bg-zinc-800 text-white duration-500 ease-in-out flex justify-between items-center px-0 lg:px-32 sm:px-10 ${navState}`}>
+                   <Image src='/assets/images/ctihc_logo.png' alt='ctihc_logo' height={75} width={75} />
+                   <div className="hidden justify-between items-center gap-7 h-full lg:flex md:flex">
+                          <Link href="#" className='h-full border-b-2 border-transparent hover:border-amber-500 flex items-center'>
+                              Home
+                          </Link>
+                          <Link href="#" className='h-full border-b-2 border-transparent hover:border-amber-500 flex items-center'>
+                              About
+                          </Link>
+                          <Link href="#" className='h-full border-b-2 border-transparent hover:border-amber-500 flex items-center'>
+                            Contact Us
+                          </Link>
+                          <div className='group relative h-full border-b-2 border-transparent flex items-center'>
+                              DropDown
+                              <div className="invisible text-nowrap bg-white drop-shadow-lg rounded transition-all  duration-200 ease-in-out absolute mt-3 z-10 top-full w-auto py-2 text-black pl-5 pr-2 flex flex-col items-end gap-2 right-0 opacity-0 group-hover:visible group-hover:mt-1 group-hover:opacity-100">
+                                  <Link href="https://www.google.com">
+                                      Home of the chosen
+                                  </Link>
+                                  <Link href="#" className=''>
+                                      About 1
+                                  </Link>
+                                  <Link href="#" className=''>
+                                      About 2
+                                  </Link>
+                                  <Link href="#" className=''>
+                                      About 3
+                                  </Link>
+                                  <Link href="#" className=''>
+                                      About 4
+                                  </Link>
+                                  <Link href="#" className=''>
+                                      About 5
+                                  </Link>
+                              </div>
+                          </div>
                    </div>
             </div>
         </nav>
