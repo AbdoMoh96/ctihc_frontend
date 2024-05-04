@@ -9,18 +9,21 @@ const Nav: React.FC<propTypes> = () => {
 
     useEffect(() => {
         document.addEventListener('scroll', () => {
-           if (window.scrollY >= 5){
-               setNaveState('bg-red-600');
-           }else{
+           if (window.scrollY >= 150 && window.scrollY < 200){
+               setNaveState('-top-20 opacity-0');
+           }else if(window.scrollY >= 200){
+               setNaveState('fixed top-0 opacity-1 bg-red-600 w-screen');
+           }
+           else{
                setNaveState('');
            }
         })
     }, []);
 
     return (
-        <nav className="bg-blue-500 h-20">
-            <div className={`h-20 ${navState}`}>
-
+        <nav className="h-20">
+            <div className={`h-20 transition-all duration-500 ease-in-out bg-red-600 ${navState}`}>
+              
             </div>
         </nav>
     )
