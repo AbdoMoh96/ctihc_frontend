@@ -10,11 +10,14 @@ const Nav: React.FC<propTypes> = () => {
 
     const [navState, setNavState] = useState<string>('');
 
+    // navbar height controls the height of the navbar in all phases using tailwind units
+    const navHeight: string = '20';
+
     useEffect(() => {
         // handel scroll event animation using useState and native event listener
         document.addEventListener('scroll', () => {
            if (window.scrollY >= 150 && window.scrollY < 400){
-               setNavState('fixed -top-20 w-full opacity-0');
+               setNavState(`fixed -top-${navHeight} w-full opacity-0`);
            }else if(window.scrollY >= 400){
                setNavState('fixed top-0 opacity-1 w-full');
            }
@@ -28,8 +31,8 @@ const Nav: React.FC<propTypes> = () => {
     }, []);
 
     return (
-        <nav className="h-20">
-            <div className={`h-20 transition-all bg-zinc-800 text-white flex justify-center duration-500 ease-in-out ${navState}`}>
+        <nav className={`h-${navHeight}`}>
+            <div className={`h-${navHeight} transition-all bg-zinc-800 text-white flex justify-center duration-500 ease-in-out ${navState}`}>
                   <div className='container flex justify-between items-center mx-auto px-3'>
                    <Image src='/assets/images/ctihc_logo.png' alt='ctihc_logo' height={75} width={75} />
                    <div className="hidden justify-between items-center gap-7 h-full lg:flex">
