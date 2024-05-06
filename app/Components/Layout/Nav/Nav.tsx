@@ -37,7 +37,7 @@ const Nav: React.FC<propTypes> = () => {
                   <Container className='flex justify-between items-center'>
                    <Image src='/assets/images/ctihc_logo.png' alt='ctihc_logo' height={75} width={75} />
                    <div className="hidden justify-between items-center gap-7 h-full lg:flex">
-                          <Link href="#" className='h-full border-b-2 border-transparent hover:border-amber-500 flex items-center'>
+                          <Link href="#" className='h-full border-b-2 transition-all duration-500 ease-in-out border-transparent hover:border-amber-500 flex items-center hover:text-amber-500'>
                               Home
                           </Link>
                           <Link href="#" className='h-full border-b-2 border-transparent hover:border-amber-500 flex items-center'>
