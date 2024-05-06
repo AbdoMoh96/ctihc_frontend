@@ -30,9 +30,9 @@ const Nav: React.FC<propTypes> = () => {
     return (
         <nav className="h-20">
             <div className={`h-20 transition-all bg-zinc-800 text-white flex justify-center duration-500 ease-in-out ${navState}`}>
-                  <div className='container flex justify-between items-center'>
+                  <div className='container flex justify-between items-center mx-auto px-3'>
                    <Image src='/assets/images/ctihc_logo.png' alt='ctihc_logo' height={75} width={75} />
-                   <div className="hidden justify-between items-center gap-7 h-full lg:flex md:flex">
+                   <div className="hidden justify-between items-center gap-7 h-full lg:flex">
                           <Link href="#" className='h-full border-b-2 border-transparent hover:border-amber-500 flex items-center'>
                               Home
                           </Link>
@@ -66,7 +66,7 @@ const Nav: React.FC<propTypes> = () => {
                               </div>
                           </div>
                    </div>
-                   <div className='flex justify-center align-middle md:hidden'>
+                   <div className='flex justify-center align-middle lg:hidden'>
                        <FaBars size={22} />
                    </div>
                   </div>
