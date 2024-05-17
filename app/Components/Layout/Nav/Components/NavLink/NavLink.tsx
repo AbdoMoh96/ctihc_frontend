@@ -13,3 +13,5 @@ const NavLink : React.FC<propTypes> = ({text, href = '#', className = ''}) => {
         {text}
     </Link>
 }
+
+export default NavLink;
