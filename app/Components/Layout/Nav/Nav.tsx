@@ -11,6 +11,7 @@ interface propTypes {}
 const Nav: React.FC<propTypes> = () => {
 
     const [navState, setNavState] = useState<string>('');
+    const [showMenu, setShowMenu] = useState<boolean>(false);
 
     // navbar height controls the height of the navbar in all phases using tailwind units
 
@@ -37,10 +38,10 @@ const Nav: React.FC<propTypes> = () => {
             <div className={`h-20 transition-all bg-zinc-800 text-white flex justify-center duration-500 ease-in-out ${navState}`}>
                   <Container className='flex justify-between items-center'>
                    <Image src='/assets/images/ctihc_logo.png' alt='ctihc_logo' height={75} width={75} />
-                   <div className="hidden justify-between items-center gap-7 h-full lg:flex">
-                          <NavLink text="Home"/>
-                          <NavLink text="About"/>
-                          <NavLink text="Contact"/>
+                   <div className={`fixed transition-all duration-500 ease-in-out top-20 w-full text-black bg-white flex justify-between items-center flex-col lg:transition-none lg:w-auto lg:flex-row gap-7 lg:bg-transparent h-full lg:text-white lg:mt-0 lg:static ${showMenu ? 'right-0' : '-right-full' }`}>
+                          <NavLink onClick={() => setShowMenu(false)} text="Home"/>
+                          <NavLink onClick={() => setShowMenu(false)} text="About"/>
+                          <NavLink onClick={() => setShowMenu(false)} text="Contact"/>
                           <div className='group relative h-full border-b-2 border-transparent flex items-center'>
                               DropDown
                               <div className="invisible text-nowrap bg-white drop-shadow-lg rounded transition-all  duration-200 ease-in-out absolute mt-3 z-10 top-full w-auto py-2 text-black pl-5 pr-2 flex flex-col items-end gap-2 right-0 opacity-0 group-hover:visible group-hover:mt-1 group-hover:opacity-100">
@@ -66,7 +67,7 @@ const Nav: React.FC<propTypes> = () => {
                           </div>
                    </div>
                    <div className='flex justify-center align-middle lg:hidden'>
-                       <FaBars size={22} />
+                       <FaBars size={22} onClick={() => setShowMenu(state => !state)} />
                    </div>
                   </Container>
             </div>
