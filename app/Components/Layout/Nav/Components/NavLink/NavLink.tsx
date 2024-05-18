@@ -10,7 +10,7 @@ interface propTypes {
 
 const NavLink : React.FC<propTypes> = ({text, href = '#', className = '', onClick}) => {
 
-    return <Link onClick={onClick} href={href} className={`h-full border-b-2 transition-all duration-500 ease-in-out border-transparent hover:border-amber-500 flex items-center hover:text-amber-500 ${className}`}>
+    return <Link onClick={onClick} href={href} className={`lg:h-full border-b-2 transition-all duration-500 ease-in-out border-transparent hover:border-amber-500 flex items-center hover:text-amber-500 ${className}`}>
         {text}
     </Link>
 }
