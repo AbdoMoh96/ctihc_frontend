@@ -1,13 +1,5 @@
-'use client'
 import React from 'react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination,Autoplay,Parallax, Scrollbar, A11y } from 'swiper/modules';
-
-import Container from '@/app/Components/Layout/Container';
+import HeroSlider from "@/app/Components/HeroSlider";
 
 const slides = [
     {
@@ -31,37 +23,9 @@ export default function HomePage() {
   return (
       <>
         <main className="bg-amber-50">
-
-                    <section className='h-[70vh]' id="hero section">
-                        <Swiper
-                            modules={[Navigation, Pagination, Parallax, Autoplay, Scrollbar, A11y]}
-                            slidesPerView={1}
-                            parallax={true}
-                            navigation
-                            speed={1400}
-                            pagination={{ clickable: true }}
-                            //loop={true}
-                            autoplay={{
-                                delay: 4000,
-                                pauseOnMouseEnter: true
-                            }}
-                            style={{ height: '100%'}}
-                        >
-                            {slides.map((slide, index) => (
-                                <SwiperSlide key={index}>
-                                    <div className="relative h-full">
-                                        <img src={slide.image} alt={`Slide ${index + 1}`} className="w-full h-full object-cover" />
-                                        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-25"/>
-                                        <div className="absolute top-3/4 text-center lg:text-left left-1/2 lg:top-auto transform lg:transform-none -translate-x-1/2 -translate-y-1/2 lg:bottom-36 lg:left-36 p-4 text-white">
-                                            <h2 className="text-6xl font-roboto mb-4">{slide.title}</h2>
-                                            <p className="font-roboto text-3xl">{slide.description}</p>
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
-                    </section>
-
+              <section className='h-[70vh]' id="hero section">
+                   <HeroSlider slides={slides}/>
+              </section>
         </main>
       </>
   );
