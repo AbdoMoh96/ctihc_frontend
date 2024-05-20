@@ -38,6 +38,7 @@ export default function HomePage() {
                             slidesPerView={1}
                             parallax={true}
                             navigation
+                            speed={1400}
                             pagination={{ clickable: true }}
                             //loop={true}
                             autoplay={{
