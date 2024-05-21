@@ -2,6 +2,7 @@ import React from 'react';
 import HeroSlider from "@/app/Components/HeroSlider";
 import slides from "@/Data/heroSlidesData";
 import Container from "@/app/Components/Layout/Container";
+import BoxAnimation from "@/Components/Animation/BoxAnimation";
 
 export default function HomePage() {
   return (
@@ -24,6 +25,7 @@ export default function HomePage() {
                   </Container>
               </section>
 
+              <BoxAnimation>
               <section className="py-2 mt-28" id='news-section'>
                   <Container className='gap-7 lg:gap-5 flex flex-col justify-center items-center'>
                       <h1 className='text-3xl font-roboto font-semibold text-center'>latest news</h1>
@@ -59,7 +61,9 @@ export default function HomePage() {
                       </button>
                   </Container>
               </section>
+              </BoxAnimation>
 
+              <BoxAnimation>
               <section className="py-2 mt-28" id='services-section'>
                   <Container className='gap-7 lg:gap-5 flex flex-col justify-center items-center'>
                       <h1 className='text-3xl font-roboto font-semibold text-center'>our services</h1>
@@ -135,9 +139,8 @@ export default function HomePage() {
                       </button>
                   </Container>
               </section>
-
-
+              </BoxAnimation>
           </main>
       </>
-  );
+);
 }
