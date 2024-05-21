@@ -14,7 +14,7 @@ const DropDown : React.FC<propTypes> = ({children, title}) => {
     return <div
         className='group relative w-full lg:w-auto lg:h-full border-transparent flex flex-col lg:flex-row items-center'
         onClick={() => setShowDropDown(state => !state)}>
-        <span className="transition-all flex justify-center items-center mx-auto lg:mx-0 lg:h-full duration-500 ease-in-out pb-1 text-center lg:pb-0 border-b lg:border-b-2 w-11/12 lg:w-auto border-gray-100 lg:border-transparent hover:border-amber-500 lg:flex lg:items-center hover:text-amber-500">
+        <span className="transition-all flex justify-center items-center mx-auto lg:mx-0 lg:h-full duration-500 ease-in-out pb-1 text-center lg:pb-0 border-b-transparent lg:border-b-2 w-11/12 lg:w-auto border-gray-100 lg:border-transparent hover:border-amber-500 lg:flex lg:items-center hover:text-amber-500">
             {title}
             <AiFillCaretDown className={`ml-1 transition-all duration-500 group-hover:text-amber-500 ease-in-out group-hover:lg:rotate-180 ${showDropDown ? 'rotate-180' : ''}`} />
         </span>
