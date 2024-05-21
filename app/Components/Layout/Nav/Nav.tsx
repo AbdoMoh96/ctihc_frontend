@@ -21,7 +21,7 @@ const Nav: React.FC<propTypes> = () => {
            if (window.scrollY >= 150 && window.scrollY < 400){
                setNavState(`fixed -top-20 w-full opacity-0`);
            }else if(window.scrollY >= 400){
-               setNavState('fixed top-0 opacity-1 w-full');
+               setNavState('fixed top-0 opacity-1 w-full z-500');
            }
            else{
                setNavState('');
@@ -37,7 +37,7 @@ const Nav: React.FC<propTypes> = () => {
             <div className={`h-20 font-roboto transition-all bg-zinc-800 text-white flex justify-center duration-500 ease-in-out ${navState}`}>
                   <Container className='flex justify-between items-center'>
                    <Image src='/assets/images/ctihc_logo.png' alt='ctihc_logo' height={75} width={75} />
-                   <div className={`fixed transition-all duration-500 z-10 ease-in-out top-20 w-full text-white bg-zinc-800 flex pt-4 lg:pt-0 gap-6 flex-col justify-start items-center lg:justify-between lg:transition-none lg:w-auto lg:flex-row lg:gap-7 lg:bg-transparent h-full lg:text-white lg:mt-0 lg:static ${showMenu ? 'right-0' : '-right-full' }`}>
+                   <div className={`fixed transition-all duration-500 ease-in-out top-20 w-full text-white bg-zinc-800 flex pt-4 lg:pt-0 gap-6 flex-col justify-start items-center lg:justify-between lg:transition-none lg:w-auto lg:flex-row lg:gap-7 lg:bg-transparent h-full lg:text-white lg:mt-0 lg:static ${showMenu ? 'right-0' : '-right-full' }`}>
                           <NavLink onClick={() => setShowMenu(false)} text="Home"/>
                           <NavLink onClick={() => setShowMenu(false)} text="About"/>
                           <NavLink onClick={() => setShowMenu(false)} text="Contact"/>
