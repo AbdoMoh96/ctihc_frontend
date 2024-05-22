@@ -2,7 +2,7 @@ import React from 'react';
 import HeroSlider from "@/app/Components/HeroSlider";
 import slides from "@/Data/heroSlidesData";
 import Container from "@/app/Components/Layout/Container";
-import BoxAnimation from "@/Components/Animation/BoxAnimation";
+import AnimatedSection from "@/Components/Animation/AnimatedSection";
 
 export default function HomePage() {
   return (
@@ -11,7 +11,7 @@ export default function HomePage() {
               <section className='h-[70vh]' id="hero-section">
                   <HeroSlider slides={slides}/>
               </section>
-              <section className="py-2 lg:mt-6" id='about-section'>
+              <AnimatedSection className="py-2 lg:mt-6" id='about-section'>
                   <Container className='h-full gap-7 lg:gap-5 flex flex-col justify-center items-center'>
                       <h1 className='text-2xl font-roboto font-semibold text-center'>Lorem ipsum dolor sit amet,
                           consectetur adipisicing elit.</h1>
@@ -23,10 +23,9 @@ export default function HomePage() {
                           know more
                       </button>
                   </Container>
-              </section>
+              </AnimatedSection>
 
-              <BoxAnimation>
-              <section className="py-2 mt-28" id='news-section'>
+              <AnimatedSection className="py-2 mt-28" id='news-section'>
                   <Container className='gap-7 lg:gap-5 flex flex-col justify-center items-center'>
                       <h1 className='text-3xl font-roboto font-semibold text-center'>latest news</h1>
                       <div className='w-full py-2 grid grid-cols-1 lg:grid-cols-3 gap-10'>
@@ -60,11 +59,10 @@ export default function HomePage() {
                           show all news
                       </button>
                   </Container>
-              </section>
-              </BoxAnimation>
+              </AnimatedSection>
 
-              <BoxAnimation>
-              <section className="py-2 mt-28" id='services-section'>
+
+              <AnimatedSection className="py-2 mt-28" id='services-section'>
                   <Container className='gap-7 lg:gap-5 flex flex-col justify-center items-center'>
                       <h1 className='text-3xl font-roboto font-semibold text-center'>our services</h1>
                       <div className='w-full py-2 grid grid-cols-1 lg:grid-cols-4 gap-10'>
@@ -138,8 +136,8 @@ export default function HomePage() {
                           show all services
                       </button>
                   </Container>
-              </section>
-              </BoxAnimation>
+              </AnimatedSection>
+
           </main>
       </>
 );
