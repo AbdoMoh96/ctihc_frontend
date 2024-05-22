@@ -9,7 +9,7 @@ interface propTypes {
 }
 
 const fadeInVariants = {
-    hidden: { opacity: 0, y: 75 },
+    hidden: { opacity: 0, y: -75 },
     visible: { opacity: 1, y: 0 },
 };
 
@@ -31,7 +31,7 @@ const AnimatedSection = ({ children, className, id }: propTypes) => {
             initial="hidden"
             variants={fadeInVariants}
             animate={animationState}
-            transition={{ duration: 0.5, delay: 0.25 }}
+            transition={{ duration: 0.5, delay: 0.25, ease: "easeInOut" }}
         >
             {children}
         </motion.div>
