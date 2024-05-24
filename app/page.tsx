@@ -29,7 +29,7 @@ export default function HomePage() {
               <AnimatedSection className="py-2 mt-28" id='news-section'>
                   <Container className='gap-7 lg:gap-5 flex flex-col justify-center items-center'>
                       <h1 className='text-3xl font-roboto font-semibold text-center'>latest news</h1>
-                      <div className='w-full py-2 grid grid-cols-1 lg:grid-cols-3 gap-10'>
+                      <div className='w-full py-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10'>
 
                           <div
                               className='transition-all group relative ease-in-out duration-300 w-full flex flex-col-reverse  p-3 h-72 rounded-2xl cursor-pointer bg-[url("https://images.unsplash.com/photo-1491036775913-3fbc5c455842")] bg-cover'>
@@ -41,6 +41,14 @@ export default function HomePage() {
 
                           <div
                               className='transition-all group relative ease-in-out duration-300 w-full flex flex-col-reverse  p-3 h-72 rounded-2xl cursor-pointer bg-[url("https://images.unsplash.com/photo-1491036775913-3fbc5c455842")] bg-cover'>
+                              <div
+                                  className='transition-all ease-in-out duration-300 absolute top-0 z-10 left-0 w-full h-full rounded-2xl opacity-0 group-hover:opacity-50 bg-gradient-to-b from-transparent to-gray-950'/>
+                              <h4 className='text-white font-roboto z-20'>Lorem ipsum dolor sit amet, consectetur
+                                  adipisicing elit. Eius, repudiandae!</h4>
+                          </div>
+
+                          <div
+                              className='transition-all group relative ease-in-out duration-300 w-full flex flex-col-reverse  p-3 h-72 rounded-2xl cursor-pointer bg-[url("https://images.unsplash.com/photo-1553432172-f37667f5ed15")] bg-cover'>
                               <div
                                   className='transition-all ease-in-out duration-300 absolute top-0 z-10 left-0 w-full h-full rounded-2xl opacity-0 group-hover:opacity-50 bg-gradient-to-b from-transparent to-gray-950'/>
                               <h4 className='text-white font-roboto z-20'>Lorem ipsum dolor sit amet, consectetur
@@ -66,8 +74,8 @@ export default function HomePage() {
               <AnimatedSection className="py-2 mt-28" id='services-section'>
                   <Container className='gap-7 lg:gap-5 flex flex-col justify-center items-center'>
                       <h1 className='text-3xl font-roboto font-semibold text-center'>our services</h1>
-                      <div className='w-full py-2 grid grid-cols-1 lg:grid-cols-4 gap-10'>
-                          <div
+                      <div className='w-full py-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10'>
+                      <div
                               className='w-full flex flex-col shadow-xl h-72 rounded-2xl cursor-pointer transition-all duration-300 ease-in-out lg:hover:scale-105'>
                               <div
                                   className='rounded-t-2xl bg-[url("https://images.unsplash.com/photo-1491036775913-3fbc5c455842")] bg-cover h-[80%]'/>

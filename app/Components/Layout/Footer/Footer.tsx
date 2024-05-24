@@ -10,8 +10,8 @@ const Footer: React.FC<propTypes> = () => {
 
     return (
         <footer className="py-2  bg-zinc-800">
-            <Container className='gap-7 lg:gap-5 flex flex-col justify-center items-center'>
-                <div className='w-full py-2 grid grid-cols-1 lg:grid-cols-4 gap-16'>
+            <Container className='gap-7 lg:gap-5 flex flex-col justify-center items-center '>
+                <div className='w-full py-2 grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 gap-16'>
                     <div className='py-2 flex flex-col gap-2'>
                         <div className='flex flex-row items-center gap-2'>
                             <Image src='/assets/images/ctihc_logo.png' alt='ctihc_logo' height={100} width={80}/>
