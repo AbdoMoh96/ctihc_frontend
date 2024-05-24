@@ -41,16 +41,14 @@ const Nav: React.FC<propTypes> = () => {
                    <Image src='/assets/images/ctihc_logo.png' alt='ctihc_logo' height={75} width={75} />
                    <div className={`fixed transition-all duration-500 ease-in-out top-20 z-500 w-full text-white bg-zinc-800 flex pt-4 lg:pt-0 gap-6 flex-col justify-start items-center lg:justify-between lg:transition-none lg:w-auto lg:flex-row lg:gap-7 lg:bg-transparent h-full lg:text-white lg:mt-0 lg:static ${showMenu ? 'right-0' : '-right-full' }`}>
                           <NavLink onClick={() => setShowMenu(false)} text="Home"/>
-                          <NavLink onClick={() => setShowMenu(false)} text="About"/>
-                          <NavLink onClick={() => setShowMenu(false)} text="Contact"/>
-                        <DropDown title='test'>
-                            <DropDownLink href="https://www.google.com" text='Home of the chosen'/>
-                            <DropDownLink text='About 1'/>
-                            <DropDownLink text='About 2'/>
-                            <DropDownLink text='About 3'/>
-                            <DropDownLink text='About 4'/>
-                            <DropDownLink text='About 5'/>
-                            <DropDownLink text='About 6'/>
+                          <NavLink onClick={() => setShowMenu(false)} text="About Us"/>
+                          <NavLink onClick={() => setShowMenu(false)} text="Reports"/>
+                          <NavLink onClick={() => setShowMenu(false)} text="Group Structure"/>
+                          <NavLink onClick={() => setShowMenu(false)} text="News"/>
+                          <NavLink onClick={() => setShowMenu(false)} text="Contact Us"/>
+                        <DropDown title='Language'>
+                            <DropDownLink text='English'/>
+                            <DropDownLink text='Arabic'/>
                         </DropDown>
                    </div>
                    <div className='flex justify-center align-middle lg:hidden'>

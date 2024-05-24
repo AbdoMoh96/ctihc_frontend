@@ -9,7 +9,7 @@ interface propTypes {}
 const Footer: React.FC<propTypes> = () => {
 
     return (
-        <footer className="py-2 mt-28 bg-zinc-800">
+        <footer className="py-2  bg-zinc-800">
             <Container className='gap-7 lg:gap-5 flex flex-col justify-center items-center'>
                 <div className='w-full py-2 grid grid-cols-1 lg:grid-cols-4 gap-16'>
                     <div className='py-2 flex flex-col gap-2'>

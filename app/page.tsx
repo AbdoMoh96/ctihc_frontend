@@ -3,6 +3,7 @@ import HeroSlider from "@/app/Components/HeroSlider";
 import slides from "@/Data/heroSlidesData";
 import Container from "@/app/Components/Layout/Container";
 import AnimatedSection from "@/Components/Animation/AnimatedSection";
+import Data from "@/Data/data";
 
 export default function HomePage() {
   return (
@@ -118,6 +119,11 @@ export default function HomePage() {
                   </Container>
               </AnimatedSection>
 
+              <iframe
+                  src={Data.companyMapsLocation}
+                   loading="lazy"
+                   className="border-0 w-screen mt-20 h-60"
+                  referrerPolicy="no-referrer-when-downgrade"></iframe>
           </main>
       </>
   );
