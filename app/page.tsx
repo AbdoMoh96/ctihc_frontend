@@ -130,7 +130,7 @@ export default function HomePage() {
               <iframe
                   src={Data.companyMapsLocation}
                    loading="lazy"
-                   className="border-0 w-screen mt-20 h-60"
+                   className="border-0 w-full mt-20 h-60"
                   referrerPolicy="no-referrer-when-downgrade"></iframe>
           </main>
       </>
