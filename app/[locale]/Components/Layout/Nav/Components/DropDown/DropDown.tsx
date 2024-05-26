@@ -1,6 +1,6 @@
 import React,{useState, ReactElement} from 'react';
 import { AiFillCaretDown } from "react-icons/ai";
-import DropDownLink from "@/app/Components/Layout/Nav/Components/DropDownLink";
+import DropDownLink from "@/app/[locale]/Components/Layout/Nav/Components/DropDownLink";
 
 interface propTypes {
     title: string;

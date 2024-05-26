@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from "@/app/Components/Layout/Container";
+import Container from "@/app/[locale]/Components/Layout/Container";
 import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa6";

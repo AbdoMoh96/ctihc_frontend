@@ -1,7 +1,7 @@
 import React from 'react';
-import HeroSlider from "@/app/Components/HeroSlider";
+import HeroSlider from "@/app/[locale]/Components/HeroSlider";
 import slides from "@/Data/heroSlidesData";
-import Container from "@/app/Components/Layout/Container";
+import Container from "@/app/[locale]/Components/Layout/Container";
 import AnimatedSection from "@/Components/Animation/AnimatedSection";
 import Data from "@/Data/data";
 

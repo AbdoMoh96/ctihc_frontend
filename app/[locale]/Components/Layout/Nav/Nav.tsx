@@ -1,11 +1,11 @@
 'use client'
 import React, {useEffect, useState} from 'react';
-import Container from '@/app/Components/Layout/Container';
-import NavLink from "@/app/Components/Layout/Nav/Components/NavLink";
+import Container from '@/app/[locale]/Components/Layout/Container';
+import NavLink from "@/app/[locale]/Components/Layout/Nav/Components/NavLink";
 import { FaBars } from "react-icons/fa";
 import Image from 'next/image';
-import DropDown from "@/app/Components/Layout/Nav/Components/DropDown";
-import DropDownLink from "@/app/Components/Layout/Nav/Components/DropDownLink";
+import DropDown from "@/app/[locale]/Components/Layout/Nav/Components/DropDown";
+import DropDownLink from "@/app/[locale]/Components/Layout/Nav/Components/DropDownLink";
 
 interface propTypes {}
 

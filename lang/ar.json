@@ -1,0 +1,14 @@
+{
+  "Index" : {
+    "lang" : "ar",
+    "dir" : "rtl"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "about_us": "معلومات عنا",
+    "reports": "التقارير",
+    "group_structure": "هيكل المجموعة",
+    "news": "الأخبار",
+    "contact_us": "اتصل بنا"
+  }
+}

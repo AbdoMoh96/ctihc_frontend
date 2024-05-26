@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import Nav from "@/app/Components/Layout/Nav";
-import Footer from "@/app/Components/Layout/Footer";
+import Nav from "@/app/[locale]/Components/Layout/Nav";
+import Footer from "@/app/[locale]/Components/Layout/Footer";
+import {useTranslations} from 'next-intl';
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -13,8 +14,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html className='scroll-smooth' lang="en">
+    const lang = useTranslations('Index')('lang');
+    const dir = useTranslations('Index')('dir');
+    return (
+    <html className='scroll-smooth' lang={lang} dir={dir}>
       <body>
        <Nav/>
         {children}
