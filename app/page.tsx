@@ -32,7 +32,7 @@ export default function HomePage() {
                       <div className='w-full py-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10'>
 
                           <div
-                              className='transition-all group relative ease-in-out duration-300 w-full flex flex-col-reverse  p-3 h-72 rounded-2xl cursor-pointer bg-[url("https://images.unsplash.com/photo-1491036775913-3fbc5c455842")] bg-cover'>
+                              className='transition-all group relative ease-in-out duration-300 w-full flex flex-col-reverse  p-3 h-72 rounded-2xl cursor-pointer bg-[url("/assets/images/news/news_1.png")] bg-cover'>
                               <div
                                   className='transition-all ease-in-out duration-300 absolute top-0 z-10 left-0 w-full h-full rounded-2xl opacity-0 group-hover:opacity-50 bg-gradient-to-b from-transparent to-gray-950'/>
                               <h4 className='text-white font-roboto z-20'>Lorem ipsum dolor sit amet, consectetur
@@ -40,7 +40,7 @@ export default function HomePage() {
                           </div>
 
                           <div
-                              className='transition-all group relative ease-in-out duration-300 w-full flex flex-col-reverse  p-3 h-72 rounded-2xl cursor-pointer bg-[url("https://images.unsplash.com/photo-1491036775913-3fbc5c455842")] bg-cover'>
+                              className='transition-all group relative ease-in-out duration-300 w-full flex flex-col-reverse  p-3 h-72 rounded-2xl cursor-pointer bg-[url("/assets/images/news/news_2.png")] bg-cover'>
                               <div
                                   className='transition-all ease-in-out duration-300 absolute top-0 z-10 left-0 w-full h-full rounded-2xl opacity-0 group-hover:opacity-50 bg-gradient-to-b from-transparent to-gray-950'/>
                               <h4 className='text-white font-roboto z-20'>Lorem ipsum dolor sit amet, consectetur
@@ -48,7 +48,7 @@ export default function HomePage() {
                           </div>
 
                           <div
-                              className='transition-all group relative ease-in-out duration-300 w-full flex flex-col-reverse  p-3 h-72 rounded-2xl cursor-pointer bg-[url("https://images.unsplash.com/photo-1553432172-f37667f5ed15")] bg-cover'>
+                              className='transition-all group relative ease-in-out duration-300 w-full flex flex-col-reverse  p-3 h-72 rounded-2xl cursor-pointer bg-[url("/assets/images/news/news_3.png")] bg-cover'>
                               <div
                                   className='transition-all ease-in-out duration-300 absolute top-0 z-10 left-0 w-full h-full rounded-2xl opacity-0 group-hover:opacity-50 bg-gradient-to-b from-transparent to-gray-950'/>
                               <h4 className='text-white font-roboto z-20'>Lorem ipsum dolor sit amet, consectetur
@@ -56,7 +56,7 @@ export default function HomePage() {
                           </div>
 
                           <div
-                              className='transition-all group relative ease-in-out duration-300 w-full flex flex-col-reverse  p-3 h-72 rounded-2xl cursor-pointer bg-[url("https://images.unsplash.com/photo-1553432172-f37667f5ed15")] bg-cover'>
+                              className='transition-all group relative ease-in-out duration-300 w-full flex flex-col-reverse  p-3 h-72 rounded-2xl cursor-pointer bg-[url("/assets/images/news/news_4.png")] bg-cover'>
                               <div
                                   className='transition-all ease-in-out duration-300 absolute top-0 z-10 left-0 w-full h-full rounded-2xl opacity-0 group-hover:opacity-50 bg-gradient-to-b from-transparent to-gray-950'/>
                               <h4 className='text-white font-roboto z-20'>Lorem ipsum dolor sit amet, consectetur
@@ -73,12 +73,12 @@ export default function HomePage() {
 
               <AnimatedSection className="py-2 mt-28" id='services-section'>
                   <Container className='gap-7 lg:gap-5 flex flex-col justify-center items-center'>
-                      <h1 className='text-3xl font-roboto font-semibold text-center'>our services</h1>
+                      <h1 className='text-3xl font-roboto font-semibold text-center'>our products</h1>
                       <div className='w-full py-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10'>
                       <div
                               className='w-full flex flex-col shadow-xl h-72 rounded-2xl cursor-pointer transition-all duration-300 ease-in-out lg:hover:scale-105'>
                               <div
-                                  className='rounded-t-2xl bg-[url("https://images.unsplash.com/photo-1491036775913-3fbc5c455842")] bg-cover h-[80%]'/>
+                                  className='rounded-t-2xl bg-[url("/assets/images/products/product_1.png")] bg-cover h-[80%]'/>
                               <div
                                   className='text-black bg-white h-[20%] font-roboto flex flex-col justify-center items-center gap-1 rounded-b-2xl p-2'>
                                   <h4>
@@ -89,7 +89,7 @@ export default function HomePage() {
                           <div
                               className='w-full flex flex-col shadow-xl h-72 rounded-2xl cursor-pointer transition-all duration-300 ease-in-out lg:hover:scale-105'>
                               <div
-                                  className='rounded-t-2xl bg-[url("https://images.unsplash.com/photo-1491036775913-3fbc5c455842")] bg-cover h-[80%]'/>
+                                  className='rounded-t-2xl bg-[url("/assets/images/products/product_2.png")] bg-cover h-[80%]'/>
                               <div
                                   className='text-black bg-white h-[20%] font-roboto flex flex-col justify-center items-center gap-1 rounded-b-2xl p-2'>
                                   <h4>
@@ -100,7 +100,7 @@ export default function HomePage() {
                           <div
                               className='w-full flex flex-col shadow-xl h-72 rounded-2xl cursor-pointer transition-all duration-300 ease-in-out lg:hover:scale-105'>
                               <div
-                                  className='rounded-t-2xl bg-[url("https://images.unsplash.com/photo-1491036775913-3fbc5c455842")] bg-cover h-[80%]'/>
+                                  className='rounded-t-2xl bg-[url("/assets/images/products/product_3.png")] bg-cover h-[80%]'/>
                               <div
                                   className='text-black bg-white h-[20%] font-roboto flex flex-col justify-center items-center gap-1 rounded-b-2xl p-2'>
                                   <h4>
@@ -111,7 +111,7 @@ export default function HomePage() {
                           <div
                               className='w-full flex flex-col shadow-xl h-72 rounded-2xl cursor-pointer transition-all duration-300 ease-in-out lg:hover:scale-105'>
                               <div
-                                  className='rounded-t-2xl bg-[url("https://images.unsplash.com/photo-1491036775913-3fbc5c455842")] bg-cover h-[80%]'/>
+                                  className='rounded-t-2xl bg-[url("/assets/images/products/product_4.png")] bg-cover h-[80%]'/>
                               <div
                                   className='text-black bg-white h-[20%] font-roboto flex flex-col justify-center items-center gap-1 rounded-b-2xl p-2'>
                                   <h4>
@@ -122,7 +122,7 @@ export default function HomePage() {
                       </div>
                       <button
                           className='font-roboto transition-all ease-in-out duration-300 border border-black rounded-full py-1 px-2 hover:bg-zinc-800 hover:text-white'>
-                          show all services
+                          show all products
                       </button>
                   </Container>
               </AnimatedSection>
