@@ -1,5 +1,12 @@
 import React from 'react';
 import Container from "@/app/Components/Layout/Container";
+import { FaFacebook } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { CiLocationOn } from "react-icons/ci";
+import { LuPhone } from "react-icons/lu";
+import { MdOutlineFax } from "react-icons/md";
+import { MdOutlineEmail } from "react-icons/md";
 import Image from 'next/image';
 import Link from "next/link";
 
@@ -45,27 +52,25 @@ const Footer: React.FC<propTypes> = () => {
                     <div className='py-2 flex flex-col items-center lg:items-start text-xl lg:text-base'>
                         <h1 className='font-roboto mb-2 font-semibold text-white capitalize'>Follow Us On</h1>
                         <div className='flex flex-col font-roboto text-gray-400 items-center gap-2 lg:items-start'>
-                            <Link className='transition-all duration-500 ease-in-out hover:text-amber-500 w-fit'
-                                  href='#'>home</Link>
-                            <Link className='transition-all duration-500 ease-in-out hover:text-amber-500 w-fit'
-                                  href='#'>about</Link>
-                            <Link className='transition-all duration-500 ease-in-out hover:text-amber-500 w-fit'
-                                  href='#'>contact us</Link>
-                            <Link className='transition-all duration-500 ease-in-out hover:text-amber-500 w-fit'
-                                  href='#'>sections</Link>
+                            <Link className='transition-all capitalize flex items-center gap-1 duration-500 ease-in-out hover:text-amber-500 w-fit'
+                                  href='#'><FaFacebook size={20}/> facebook</Link>
+                            <Link className='transition-all capitalize flex items-center gap-1 duration-500 ease-in-out hover:text-amber-500 w-fit'
+                                  href='#'><FaXTwitter size={20}/> twitter</Link>
+                            <Link className='transition-all capitalize flex items-center gap-1 duration-500 ease-in-out hover:text-amber-500 w-fit'
+                                  href='#'><FaLinkedinIn size={20}/>linkedIn</Link>
                         </div>
                     </div>
                     <div className='py-2 flex flex-col items-center lg:items-start text-xl lg:text-base'>
                         <h1 className='font-roboto mb-2 font-semibold text-white capitalize'>Contact Us</h1>
                         <div className='flex flex-col font-roboto text-gray-400 items-center gap-2 lg:items-start'>
-                            <Link className='transition-all duration-500 ease-in-out hover:text-amber-500 w-fit'
-                                  href='#'>home</Link>
-                            <Link className='transition-all duration-500 ease-in-out hover:text-amber-500 w-fit'
-                                  href='#'>about</Link>
-                            <Link className='transition-all duration-500 ease-in-out hover:text-amber-500 w-fit'
-                                  href='#'>contact us</Link>
-                            <Link className='transition-all duration-500 ease-in-out hover:text-amber-500 w-fit'
-                                  href='#'>sections</Link>
+                            <Link className='transition-all capitalize flex items-center gap-1 duration-500 ease-in-out hover:text-amber-500 w-fit'
+                                  href='https://maps.app.goo.gl/X7jD9bYWyrYdhTxX6' target="_blank"><CiLocationOn size={20}/> 8 El-Sayed Mohammed Taher</Link>
+                            <Link className='transition-all capitalize flex items-center gap-1 duration-500 ease-in-out hover:text-amber-500 w-fit'
+                                  href='tel:0223953447'><LuPhone size={20}/> 23905153-23953447(202)</Link>
+                            <span className='transition-all capitalize flex items-center gap-1 duration-500 ease-in-out hover:text-amber-500 w-fit'
+                                  ><MdOutlineFax size={20}/>23903235-23955922(202)</span>
+                            <Link className='transition-all capitalize flex items-center gap-1 duration-500 ease-in-out hover:text-amber-500 w-fit'
+                                  href='mailto:contact@ctihc.com'><MdOutlineEmail size={20}/>contact@ctihc.com</Link>
                         </div>
                     </div>
                 </div>
