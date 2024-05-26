@@ -6,6 +6,7 @@ import { FaBars } from "react-icons/fa";
 import Image from 'next/image';
 import DropDown from "@/app/[locale]/Components/Layout/Nav/Components/DropDown";
 import DropDownLink from "@/app/[locale]/Components/Layout/Nav/Components/DropDownLink";
+import {useTranslations} from 'next-intl';
 
 interface propTypes {}
 
@@ -13,6 +14,8 @@ const Nav: React.FC<propTypes> = () => {
 
     const [navState, setNavState] = useState<string>('');
     const [showMenu, setShowMenu] = useState<boolean>(false);
+    const lang = useTranslations('Index')('lang');
+    const local = useTranslations('nav');
 
 
     useEffect(() => {
@@ -40,16 +43,22 @@ const Nav: React.FC<propTypes> = () => {
                   <Container className='flex justify-between items-center'>
                    <Image src='/assets/images/ctihc_logo.png' alt='ctihc_logo' height={75} width={75} />
                    <div className={`fixed transition-all duration-500 ease-in-out top-20 z-500 w-full text-white bg-zinc-800 flex pt-4 lg:pt-0 gap-6 flex-col justify-start items-center lg:justify-between lg:transition-none lg:w-auto lg:flex-row lg:gap-7 lg:bg-transparent h-full lg:text-white lg:mt-0 lg:static ${showMenu ? 'right-0' : '-right-full' }`}>
-                          <NavLink onClick={() => setShowMenu(false)} text="Home"/>
-                          <NavLink onClick={() => setShowMenu(false)} text="About Us"/>
-                          <NavLink onClick={() => setShowMenu(false)} text="Reports"/>
-                          <NavLink onClick={() => setShowMenu(false)} text="Group Structure"/>
-                          <NavLink onClick={() => setShowMenu(false)} text="News"/>
-                          <NavLink onClick={() => setShowMenu(false)} text="Contact Us"/>
-                        <DropDown title='Language'>
-                            <DropDownLink text='English'/>
-                            <DropDownLink text='Arabic'/>
-                        </DropDown>
+                          <NavLink onClick={() => setShowMenu(false)} text={local('home')}/>
+                          <NavLink onClick={() => setShowMenu(false)} text={local('about_us')}/>
+                          <NavLink onClick={() => setShowMenu(false)} text={local('reports')}/>
+                          <NavLink onClick={() => setShowMenu(false)} text={local('group_structure')}/>
+                          <NavLink onClick={() => setShowMenu(false)} text={local('news')}/>
+                       {lang == 'en' &&
+                           <NavLink href="/ar" onClick={() => setShowMenu(false)} text="العربية"/>
+                       }
+
+                       {lang == 'ar' &&
+                           <NavLink href="/en" onClick={() => setShowMenu(false)} text="English"/>
+                       }
+                        {/*<DropDown title='dropdown_title_here'>
+                            <DropDownLink text='sublink_1'/>
+                            <DropDownLink text='sublink_2'/>
+                        </DropDown>*/}
                    </div>
                    <div className='flex justify-center align-middle lg:hidden'>
                        <FaBars size={22} onClick={() => setShowMenu(state => !state)} />
