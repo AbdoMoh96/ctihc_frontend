@@ -3,10 +3,19 @@ import HeroSlider from "@/app/[locale]/Components/HeroSlider";
 import slides from "@/Data/heroSlidesData";
 import Container from "@/app/[locale]/Components/Layout/Container";
 import AnimatedSection from "@/Components/Animation/AnimatedSection";
+import {unstable_setRequestLocale} from 'next-intl/server';
 import Data from "@/Data/data";
 
-export default function HomePage() {
-  return (
+interface HomePageProps {
+    params: {
+        locale: "en" | "ar";
+    };
+}
+
+export default function HomePage({params: {locale}} : HomePageProps) {
+    unstable_setRequestLocale(locale);
+
+    return (
       <>
           <main>
               <section className='h-[70vh]' id="hero-section">

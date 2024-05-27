@@ -4,8 +4,8 @@ import Container from '@/app/[locale]/Components/Layout/Container';
 import NavLink from "@/app/[locale]/Components/Layout/Nav/Components/NavLink";
 import { FaBars } from "react-icons/fa";
 import Image from 'next/image';
-import DropDown from "@/app/[locale]/Components/Layout/Nav/Components/DropDown";
-import DropDownLink from "@/app/[locale]/Components/Layout/Nav/Components/DropDownLink";
+/*import DropDown from "@/app/[locale]/Components/Layout/Nav/Components/DropDown";
+import DropDownLink from "@/app/[locale]/Components/Layout/Nav/Components/DropDownLink";*/
 import {useTranslations} from 'next-intl';
 
 interface propTypes {}
