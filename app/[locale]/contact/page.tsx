@@ -21,9 +21,16 @@ export default function ContactPage({params: {locale}} : ContactPageProps) {
             <main>
 
 
-                <AnimatedSection className="py-2 h-[70vh] mt-28" id='contact-section'>
-                    <Container className='gap-7 lg:gap-5 flex flex-col justify-center items-center'>
-                        <h1>contact</h1>
+                <AnimatedSection className="py-2 h-[50vh]" id='contact-section'>
+                    <Container className='h-full flex flex-col justify-center items-center'>
+                        <div className='flex flex-col lg:flex-row w-full lg:w-9/12 h-72 rounded-lg shadow-2xl'>
+                            <div className='flex flex-col lg:w-6/12 h-72 bg-zinc-700 rounded-t-lg lg:rounded-t-none lg:ltr:rounded-l-lg lg:rtl:rounded-r-lg'>
+
+                            </div>
+                            <div className='flex flex-col lg:w-6/12 h-72 bg-cyan-500 rounded-b-lg lg:rounded-b-none lg:ltr:rounded-r-lg lg:rtl:rounded-l-lg'>
+
+                            </div>
+                        </div>
                     </Container>
                 </AnimatedSection>
 

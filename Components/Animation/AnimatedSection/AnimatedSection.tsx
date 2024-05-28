@@ -29,6 +29,7 @@ const AnimatedSection = ({ children, className, id }: propTypes) => {
         <section ref={ref} className={`${className} relative overflow-hidden `} id={id}>
         <motion.div
             initial="hidden"
+            className='w-full h-full'
             variants={fadeInVariants}
             animate={animationState}
             transition={{ duration: 0.5, delay: 0.25, ease: "easeInOut" }}
