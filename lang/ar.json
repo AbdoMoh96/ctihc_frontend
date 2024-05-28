@@ -20,6 +20,12 @@
     "products_title": "منتجاتنا",
     "products_button": "عرض جميع المنتجات"
   },
+  "contactPage" : {
+    "contact_us": "اتصل بنا",
+    "follow_us_on": "تابعنا على",
+    "address": "8 السيد محمد طاهر"
+  },
+  "aboutPage" : {},
   "footer": {
     "company_logo_text": "الشركة القابضة للقطن والنسيج",
     "ministry_logo_text": "وزارة قطاع الأعمال العام",

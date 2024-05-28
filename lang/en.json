@@ -20,6 +20,12 @@
     "products_title": "our products",
     "products_button": "show all products"
   },
+  "contactPage" : {
+    "contact_us" : "Contact Us",
+    "follow_us_on" : "Follow Us On",
+    "address" : "8 El-Sayed Mohammed Taher"
+  },
+  "aboutPage" : {},
   "footer" : {
     "company_logo_text" : "Cotton & Textile Industries Holding",
     "ministry_logo_text" : "Ministry Of Public Business Sector",

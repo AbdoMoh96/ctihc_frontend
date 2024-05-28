@@ -44,11 +44,11 @@ const Nav: React.FC<propTypes> = () => {
                    <Image src='/assets/images/ctihc_logo.png' alt='ctihc_logo' height={75} width={75} />
                    <div className={`fixed transition-all duration-500 ease-in-out top-20 z-500 w-full text-white bg-zinc-800 flex pt-4 lg:pt-0 gap-6 flex-col justify-start items-center lg:justify-between lg:transition-none lg:w-auto lg:flex-row lg:gap-7 lg:bg-transparent h-full lg:text-white lg:mt-0 lg:static ${showMenu ? 'right-0' : '-right-full' }`}>
                           <NavLink onClick={() => setShowMenu(false)} text={local('home')}/>
-                          <NavLink onClick={() => setShowMenu(false)} text={local('about_us')}/>
+                          <NavLink href='/about' onClick={() => setShowMenu(false)} text={local('about_us')}/>
                           <NavLink onClick={() => setShowMenu(false)} text={local('reports')}/>
                           <NavLink onClick={() => setShowMenu(false)} text={local('group_structure')}/>
-                          <NavLink onClick={() => setShowMenu(false)} text={local('news')}/>
-                          <NavLink onClick={() => setShowMenu(false)} text={local('contact_us')}/>
+                          <NavLink href='/news' onClick={() => setShowMenu(false)} text={local('news')}/>
+                          <NavLink href='/contact' onClick={() => setShowMenu(false)} text={local('contact_us')}/>
                        {lang == 'en' &&
                            <NavLink href="/ar" onClick={() => setShowMenu(false)} text="العربية"/>
                        }
