@@ -48,6 +48,7 @@ const Nav: React.FC<propTypes> = () => {
                           <NavLink onClick={() => setShowMenu(false)} text={local('reports')}/>
                           <NavLink onClick={() => setShowMenu(false)} text={local('group_structure')}/>
                           <NavLink onClick={() => setShowMenu(false)} text={local('news')}/>
+                          <NavLink onClick={() => setShowMenu(false)} text={local('contact_us')}/>
                        {lang == 'en' &&
                            <NavLink href="/ar" onClick={() => setShowMenu(false)} text="العربية"/>
                        }
