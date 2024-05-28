@@ -18,7 +18,7 @@ interface HomePageProps {
 export default function HomePage({params: {locale}} : HomePageProps) {
     unstable_setRequestLocale(locale);
 
-    const local = useTranslations('homePage');
+    const lang = useTranslations('homePage');
 
     return (
       <>
@@ -28,8 +28,8 @@ export default function HomePage({params: {locale}} : HomePageProps) {
               </section>
               <AnimatedSection className="py-2 lg:mt-6" id='about-section'>
                   <Container className='h-full gap-7 lg:gap-5 flex flex-col justify-center items-center'>
-                      <h1 className='text-2xl font-roboto font-semibold text-center'>{local('about_us_title')}</h1>
-                      <p className='text-xl font-roboto font-light text-center'>{local('about_us_description')}</p>
+                      <h1 className='text-2xl font-roboto font-semibold text-center'>{lang('about_us_title')}</h1>
+                      <p className='text-xl font-roboto font-light text-center'>{lang('about_us_description')}</p>
                       <button
                           className='font-roboto transition-all ease-in-out duration-300 border border-black rounded-full py-1 px-2 hover:bg-zinc-800 hover:text-white'>
                           know more
@@ -39,7 +39,7 @@ export default function HomePage({params: {locale}} : HomePageProps) {
 
               <AnimatedSection className="py-2 mt-28" id='news-section'>
                   <Container className='gap-7 lg:gap-5 flex flex-col justify-center items-center'>
-                      <h1 className='text-3xl font-roboto font-semibold text-center'>{local('news_title')}</h1>
+                      <h1 className='text-3xl font-roboto font-semibold text-center'>{lang('news_title')}</h1>
                       <div className='w-full py-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10'>
 
                           {news.map((newsItem: any) => {
@@ -55,7 +55,7 @@ export default function HomePage({params: {locale}} : HomePageProps) {
                       </div>
                       <button
                           className='font-roboto transition-all ease-in-out duration-300 border border-black rounded-full py-1 px-2 hover:bg-zinc-800 hover:text-white'>
-                          {local('news_button')}
+                          {lang('news_button')}
                       </button>
                   </Container>
               </AnimatedSection>
@@ -63,7 +63,7 @@ export default function HomePage({params: {locale}} : HomePageProps) {
 
               <AnimatedSection className="py-2 mt-28" id='services-section'>
                   <Container className='gap-7 lg:gap-5 flex flex-col justify-center items-center'>
-                      <h1 className='text-3xl font-roboto font-semibold text-center'>{local('products_title')}</h1>
+                      <h1 className='text-3xl font-roboto font-semibold text-center'>{lang('products_title')}</h1>
                       <div className='w-full py-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10'>
 
 
@@ -86,7 +86,7 @@ export default function HomePage({params: {locale}} : HomePageProps) {
                       </div>
                       <button
                           className='font-roboto transition-all ease-in-out duration-300 border border-black rounded-full py-1 px-2 hover:bg-zinc-800 hover:text-white'>
-                          {local('products_button')}
+                          {lang('products_button')}
                       </button>
                   </Container>
               </AnimatedSection>
