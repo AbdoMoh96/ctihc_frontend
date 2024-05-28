@@ -5,8 +5,9 @@ export default createMiddleware({
     locales: ['en', 'ar'],
 
     // Used when no locale matches
-    defaultLocale: 'en'
+    defaultLocale: 'ar'
 });
+
 
 export const config = {
     // Match only internationalized pathnames
