@@ -28,8 +28,8 @@ export default function HomePage({params: {locale}} : HomePageProps) {
               </section>
               <AnimatedSection className="py-2 lg:mt-6" id='about-section'>
                   <Container className='h-full gap-7 lg:gap-5 flex flex-col justify-center items-center'>
-                      <h1 className='text-2xl font-roboto font-semibold text-center'>{lang('about_us_title')}</h1>
-                      <p className='text-xl font-roboto font-light text-center'>{lang('about_us_description')}</p>
+                      <h1 className='text-2xl font-roboto rtl:font-cairo font-semibold text-center'>{lang('about_us_title')}</h1>
+                      <p className='text-xl font-roboto rtl:font-cairo font-light text-center'>{lang('about_us_description')}</p>
                       <button
                           className='font-roboto transition-all ease-in-out duration-300 border border-black rounded-full py-1 px-2 hover:bg-zinc-800 hover:text-white'>
                           know more
@@ -39,7 +39,7 @@ export default function HomePage({params: {locale}} : HomePageProps) {
 
               <AnimatedSection className="py-2 mt-28" id='news-section'>
                   <Container className='gap-7 lg:gap-5 flex flex-col justify-center items-center'>
-                      <h1 className='text-3xl font-roboto font-semibold text-center'>{lang('news_title')}</h1>
+                      <h1 className='text-3xl font-roboto rtl:font-cairo font-semibold text-center'>{lang('news_title')}</h1>
                       <div className='w-full py-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10'>
 
                           {news.map((newsItem: any) => {
@@ -48,13 +48,13 @@ export default function HomePage({params: {locale}} : HomePageProps) {
                                   className={`transition-all group relative ease-in-out duration-300 w-full flex flex-col-reverse  p-3 h-72 rounded-2xl cursor-pointer bg-cover`} style={{ backgroundImage: "url(" + newsItem.image + ")" }}>
                                   <div
                                       className='transition-all ease-in-out duration-300 absolute top-0 z-10 left-0 w-full h-full rounded-2xl opacity-0 group-hover:opacity-50 bg-gradient-to-b from-transparent to-gray-950'/>
-                                  <h4 className='text-white font-roboto z-20'>{newsItem['title_' + locale]}</h4>
+                                  <h4 className='text-white font-roboto rtl:font-cairo z-20'>{newsItem['title_' + locale]}</h4>
                               </div>
                           })}
 
                       </div>
                       <button
-                          className='font-roboto transition-all ease-in-out duration-300 border border-black rounded-full py-1 px-2 hover:bg-zinc-800 hover:text-white'>
+                          className='font-roboto rtl:font-cairo transition-all ease-in-out duration-300 border border-black rounded-full py-1 px-2 hover:bg-zinc-800 hover:text-white'>
                           {lang('news_button')}
                       </button>
                   </Container>
@@ -63,7 +63,7 @@ export default function HomePage({params: {locale}} : HomePageProps) {
 
               <AnimatedSection className="py-2 mt-28" id='services-section'>
                   <Container className='gap-7 lg:gap-5 flex flex-col justify-center items-center'>
-                      <h1 className='text-3xl font-roboto font-semibold text-center'>{lang('products_title')}</h1>
+                      <h1 className='text-3xl font-roboto rtl:font-cairo font-semibold text-center'>{lang('products_title')}</h1>
                       <div className='w-full py-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10'>
 
 
@@ -75,7 +75,7 @@ export default function HomePage({params: {locale}} : HomePageProps) {
                                   <div
                                       className='rounded-t-2xl  bg-cover h-[80%]' style={{ backgroundImage: "url(" + productItem.image + ")"}}/>
                                   <div
-                                      className='text-black bg-white h-[20%] font-roboto flex flex-col justify-center items-center gap-1 rounded-b-2xl p-2'>
+                                      className='text-black bg-white h-[20%] font-roboto rtl:font-cairo flex flex-col justify-center items-center gap-1 rounded-b-2xl p-2'>
                                       <h4>
                                           {productItem['title_' + locale]}
                                       </h4>
@@ -85,7 +85,7 @@ export default function HomePage({params: {locale}} : HomePageProps) {
 
                       </div>
                       <button
-                          className='font-roboto transition-all ease-in-out duration-300 border border-black rounded-full py-1 px-2 hover:bg-zinc-800 hover:text-white'>
+                          className='font-roboto rtl:font-cairo transition-all ease-in-out duration-300 border border-black rounded-full py-1 px-2 hover:bg-zinc-800 hover:text-white'>
                           {lang('products_button')}
                       </button>
                   </Container>

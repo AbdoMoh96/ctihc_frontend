@@ -25,18 +25,18 @@ const Footer: React.FC<propTypes> = () => {
                     <div className='py-2 flex flex-col gap-2'>
                         <div className='flex flex-row items-center gap-2'>
                             <Image src='/assets/images/ctihc_logo.png' alt='ctihc_logo' height={100} width={80}/>
-                            <h1 className='text-white font-roboto font-semibold capitalize'>{lang('company_logo_text')}</h1>
+                            <h1 className='text-white font-roboto rtl:font-cairo font-semibold capitalize'>{lang('company_logo_text')}</h1>
 
                         </div>
                         <div className='flex flex-row items-center gap-2'>
                             <Image src='/assets/images/ctihc_second_logo.png' className='rounded-lg' alt='ctihc_logo' height={100} width={80}/>
-                            <h1 className='text-white font-roboto font-semibold capitalize'>{lang('ministry_logo_text')}</h1>
+                            <h1 className='text-white font-roboto rtl:font-cairo font-semibold capitalize'>{lang('ministry_logo_text')}</h1>
 
                         </div>
                     </div>
                     <div className='py-2 flex flex-col items-center lg:items-start text-xl lg:text-base'>
-                        <h1 className='font-roboto mb-2 font-semibold text-white capitalize'>{lang('browse')}</h1>
-                        <div className='flex flex-col font-roboto text-gray-400 items-center gap-2 lg:items-start'>
+                        <h1 className='font-roboto rtl:font-cairo mb-2 font-semibold text-white capitalize'>{lang('browse')}</h1>
+                        <div className='flex flex-col font-roboto rtl:font-cairo text-gray-400 items-center gap-2 lg:items-start'>
                             <Link className='transition-all duration-500 ease-in-out hover:text-amber-500 w-fit'
                                   href='#'>{lang('home')}</Link>
                             <Link className='transition-all duration-500 ease-in-out hover:text-amber-500 w-fit'
@@ -52,8 +52,8 @@ const Footer: React.FC<propTypes> = () => {
                         </div>
                     </div>
                     <div className='py-2 flex flex-col items-center lg:items-start text-xl lg:text-base'>
-                        <h1 className='font-roboto mb-2 font-semibold text-white capitalize'>{lang('follow_us_on')}</h1>
-                        <div className='flex flex-col font-roboto text-gray-400 items-center gap-2 lg:items-start'>
+                        <h1 className='font-roboto rtl:font-cairo mb-2 font-semibold text-white capitalize'>{lang('follow_us_on')}</h1>
+                        <div className='flex flex-col font-roboto rtl:font-cairo text-gray-400 items-center gap-2 lg:items-start'>
                             <Link className='transition-all capitalize flex items-center gap-1 duration-500 ease-in-out hover:text-amber-500 w-fit'
                                   href='#'><FaFacebook size={20}/> facebook</Link>
                             <Link className='transition-all capitalize flex items-center gap-1 duration-500 ease-in-out hover:text-amber-500 w-fit'
@@ -63,8 +63,8 @@ const Footer: React.FC<propTypes> = () => {
                         </div>
                     </div>
                     <div className='py-2 flex flex-col items-center lg:items-start text-xl lg:text-base'>
-                        <h1 className='font-roboto mb-2 font-semibold text-white capitalize'>{lang('contact_us')}</h1>
-                        <div className='flex flex-col font-roboto text-gray-400 items-center gap-2 lg:items-start'>
+                        <h1 className='font-roboto rtl:font-cairo mb-2 font-semibold text-white capitalize'>{lang('contact_us')}</h1>
+                        <div className='flex flex-col font-roboto rtl:font-cairo text-gray-400 items-center gap-2 lg:items-start'>
                             <Link className='transition-all capitalize flex items-center gap-1 duration-500 ease-in-out hover:text-amber-500 w-fit'
                                   href='https://maps.app.goo.gl/X7jD9bYWyrYdhTxX6' target="_blank"><CiLocationOn size={20}/>{lang('address')}</Link>
                             <Link className='transition-all capitalize flex items-center gap-1 duration-500 ease-in-out hover:text-amber-500 w-fit'
@@ -77,7 +77,7 @@ const Footer: React.FC<propTypes> = () => {
                     </div>
                 </div>
             </Container>
-            <section className='flex flex-col justify-center items-center text-white font-light font-roboto gap-7 border-t border-white pt-8 my-5'>
+            <section className='flex flex-col justify-center items-center text-white font-light font-roboto rtl:font-cairo gap-7 border-t border-white pt-8 my-5'>
                 <span>{lang('copyright_title')}</span>
                 <span>{lang('copyright_description')}</span>
             </section>
