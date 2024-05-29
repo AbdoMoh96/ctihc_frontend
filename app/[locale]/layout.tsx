@@ -1,7 +1,7 @@
 import { NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 import type { Metadata } from "next";
-import Nav from "@/app/[locale]/Components/Layout/Nav";
+import dynamic from 'next/dynamic';
 import Footer from "@/app/[locale]/Components/Layout/Footer";
 import "./globals.css";
 
@@ -17,6 +17,10 @@ export function generateStaticParams() {
     return locales.map((locale) => ({locale}));
 }
 
+const DynamicNav = dynamic(() => import('@/app/[locale]/Components/Layout/Nav'), {
+    ssr: false,
+})
+
 export default async function RootLayout({
               children,
               params: {locale}
@@ -31,7 +35,7 @@ export default async function RootLayout({
         <body>
         <NextIntlClientProvider messages={messages}>
             <body>
-              <Nav/>
+              <DynamicNav/>
                {children}
              <Footer/>
             </body>
