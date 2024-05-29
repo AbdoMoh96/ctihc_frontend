@@ -23,7 +23,12 @@
   "contactPage" : {
     "contact_us": "اتصل بنا",
     "follow_us_on": "تابعنا على",
-    "address": "8 السيد محمد طاهر"
+    "address": "8 السيد محمد طاهر",
+    "full_name" : "الاسم كامل",
+    "phone" : "رقم الهاتف",
+    "email" : "الأيميل",
+    "subject" : "الموضوع",
+    "message" : "الرسالة"
   },
   "aboutPage" : {},
   "footer": {
