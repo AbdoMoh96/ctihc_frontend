@@ -5,7 +5,7 @@ import { Link as TransLink } from '@/helpers/navigation';
 interface propTypes {
     className? :string;
     text? : string;
-    href? : string;
+    href? : any;
     replace? : boolean;
     children?: ReactNode;
     onClick? : () => void;
