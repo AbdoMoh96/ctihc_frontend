@@ -28,7 +28,8 @@
     "phone" : "رقم الهاتف",
     "email" : "الأيميل",
     "subject" : "الموضوع",
-    "message" : "الرسالة"
+    "message" : "الرسالة",
+    "contact_button" : "اتصل بنا"
   },
   "aboutPage" : {},
   "footer": {
