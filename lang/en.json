@@ -28,7 +28,8 @@
     "phone" : "Phone",
     "email" : "Email",
     "subject" : "Subject",
-    "message" : "Message"
+    "message" : "Message",
+    "contact_button" : "contact us"
   },
   "aboutPage" : {},
   "footer" : {
