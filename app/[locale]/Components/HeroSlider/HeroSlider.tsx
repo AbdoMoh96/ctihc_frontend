@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React,{useEffect} from 'react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -8,6 +8,30 @@ import './heroSlider.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
 import { Navigation, Pagination,Autoplay,Parallax, Scrollbar, A11y } from 'swiper/modules';
+
+/*=========================*/
+import { Client, Account, Databases, Query } from 'appwrite';
+
+export const client = new Client();
+
+client
+    .setEndpoint('https://appwrite.abdomoh.com/v1')
+    .setProject('665f74440004fd53de63'); // Replace with your project ID
+
+/*export const account = new Account(client);
+export { ID } from 'appwrite';*/
+const databases = new Databases(client);
+
+const getSliderData = async () => {
+    let response =  await databases.listDocuments(
+        "665f758b0033ac601c18",
+        "666010740022a6e710d9",
+    );
+    console.log("Data :: ",response);
+}
+
+
+/*=========================*/
 
 interface propTypes {
     slides: Array<{
@@ -20,6 +44,10 @@ interface propTypes {
 }
 
 const HeroSlider : React.FC<propTypes> = ({slides}) => {
+
+    useEffect(() => {
+        getSliderData().catch();
+    }, []);
 
     return <Swiper
         modules={[Navigation, Pagination, Parallax, Autoplay, Scrollbar, A11y]}
