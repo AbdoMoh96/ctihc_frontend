@@ -22,10 +22,14 @@ client
 export { ID } from 'appwrite';*/
 const databases = new Databases(client);
 
-const getSliderData = async () => {
+const getSlideData = async () => {
     let response =  await databases.listDocuments(
         "665f758b0033ac601c18",
-        "666010740022a6e710d9",
+        "66602a77001e4e77b8e5",
+        [
+            Query.equal('swiper', 'home_slider'),
+            Query.select(['$id', 'image', 'title_en', 'title_ar', 'description_en', 'description_ar'])
+        ]
     );
     console.log("Data :: ",response);
 }
@@ -46,7 +50,7 @@ interface propTypes {
 const HeroSlider : React.FC<propTypes> = ({slides}) => {
 
     useEffect(() => {
-        getSliderData().catch();
+        getSlideData().catch();
     }, []);
 
     return <Swiper
