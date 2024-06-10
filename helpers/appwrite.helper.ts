@@ -1,4 +1,5 @@
-import { Client, Databases, Query } from 'appwrite';
+import { Client, Databases } from 'appwrite';
+import config from "@/helpers/config.helper";
 
 class AppWrite {
 
@@ -7,25 +8,21 @@ class AppWrite {
 
     constructor() {
         AppWrite.client
-            .setEndpoint('https://appwrite.abdomoh.com/v1')
-            .setProject('665f74440004fd53de63');
+            .setEndpoint(config.AppWriteUrl)
+            .setProject(config.AppWriteProjectId);
 
         AppWrite.databases = new Databases(AppWrite.client);
     }
 
-    static read = async () => {
+    public static read = async (collectionId: string, queries: string[] = []) => {
         try {
-            let response = await AppWrite.databases.listDocuments(
-                '665f758b0033ac601c18',
-                '66602a77001e4e77b8e5',
-                [
-                    Query.equal('swiper', 'home_slider'),
-                    Query.select(['$id', 'image', 'title_en', 'title_ar', 'description_en', 'description_ar']),
-                ]
+            return await AppWrite.databases.listDocuments(
+                config.AppWriteDataBaseId,
+                collectionId,
+                queries
             );
-            console.log('Data :: ', response);
         } catch (error) {
-            console.error('Error fetching slide data:', error);
+            console.error('Error fetching data:', error);
         }
     }
 }
