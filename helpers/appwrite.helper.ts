@@ -19,7 +19,7 @@ class AppWrite {
         }
     }
 
-    public static readFile = (buketId : string, fileId : string) => {
+    public static getImageUrl = (buketId : string, fileId : string) => {
         return `${config.AppWriteUrl}/storage/buckets/${buketId}/files/${fileId}/view?project=${config.AppWriteProjectId}`;
     }
 }
