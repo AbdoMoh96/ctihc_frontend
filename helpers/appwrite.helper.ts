@@ -3,24 +3,17 @@ import config from "@/helpers/config.helper";
 
 class AppWrite {
 
-    private static client: Client = new Client();
-    private static databases: Databases;
+    private static client: Client = new Client().setEndpoint(config.AppWriteUrl).setProject(config.AppWriteProjectId);
+    private static databases: Databases = new Databases(AppWrite.client);
 
-    constructor() {
-        AppWrite.client
-            .setEndpoint(config.AppWriteUrl)
-            .setProject(config.AppWriteProjectId);
-
-        AppWrite.databases = new Databases(AppWrite.client);
-    }
-
-    public static read = async (collectionId: string, queries: string[] = []) => {
+    public static read = async (collectionId: string, queries: string[] = [], databaseId  = '') => {
         try {
-            return await AppWrite.databases.listDocuments(
-                config.AppWriteDataBaseId,
+            let response = await AppWrite.databases.listDocuments(
+                databaseId.length > 1 ? databaseId : config.AppWriteDataBaseId,
                 collectionId,
                 queries
             );
+            return response.documents;
         } catch (error) {
             console.error('Error fetching data:', error);
         }
