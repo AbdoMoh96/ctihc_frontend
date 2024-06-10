@@ -18,6 +18,10 @@ class AppWrite {
             console.error('Error fetching data:', error);
         }
     }
+
+    public static readFile = (buketId : string, fileId : string) => {
+        return `${config.AppWriteUrl}/storage/buckets/${buketId}/files/${fileId}/view?project=${config.AppWriteProjectId}`;
+    }
 }
 
 export default AppWrite;
