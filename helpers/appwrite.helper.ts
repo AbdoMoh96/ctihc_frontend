@@ -1,4 +1,4 @@
-import {Client, Databases, Query} from 'appwrite';
+import {Client, Databases, Query} from 'node-appwrite';
 import config from "@/helpers/config.helper";
 
 class AppWrite {
