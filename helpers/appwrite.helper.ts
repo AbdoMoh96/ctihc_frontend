@@ -19,8 +19,8 @@ class AppWrite {
         }
     }
 
-    public static getImageUrl = (buketId : string, fileId : string) => {
-        return `${config.AppWriteUrl}/storage/buckets/${buketId}/files/${fileId}/view?project=${config.AppWriteProjectId}`;
+    public static getImageUrl = (buketId : string, imageId : string) => {
+        return `${config.AppWriteUrl}/storage/buckets/${buketId}/files/${imageId}/view?project=${config.AppWriteProjectId}`;
     }
 }
 
