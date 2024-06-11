@@ -1,4 +1,4 @@
-import { Client, Databases } from 'appwrite';
+import {Client, Databases, Query} from 'appwrite';
 import config from "@/helpers/config.helper";
 
 class AppWrite {
@@ -14,6 +14,26 @@ class AppWrite {
                 queries
             );
             return response.documents;
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    }
+
+    public static readData = async (group: string) => {
+        try {
+            let response = await AppWrite.databases.listDocuments(
+                config.AppWriteDataBaseId,
+                '66602d4d0014ec6ce792',
+                [
+                    Query.equal('group', group),
+                    Query.select(['key', 'value'])
+                ]
+            );
+            let dataObj : {[key: string]: string} = {};
+            response.documents.forEach(item => {
+                dataObj[item.key] = item.value;
+            });
+            return dataObj;
         } catch (error) {
             console.error('Error fetching data:', error);
         }
