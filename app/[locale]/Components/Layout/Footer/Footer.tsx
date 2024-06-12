@@ -10,13 +10,17 @@ import { MdOutlineEmail } from "react-icons/md";
 import {useTranslations} from "next-intl";
 import Image from 'next/image';
 import Link from "next/link";
+import AppWrite from "@/helpers/appwrite.helper";
 
 
 interface propTypes {}
 
-const Footer: React.FC<propTypes> = () => {
+const Footer: React.FC<propTypes> = async () => {
 
     const lang = useTranslations('footer');
+    let contactUs : any = await AppWrite.readData('contact_us').catch(() => contactUs = {});
+    let settings : any = await AppWrite.readData('settings').catch(() => settings = {});
+
 
     return (
         <footer className="py-2  bg-zinc-800">
@@ -24,12 +28,12 @@ const Footer: React.FC<propTypes> = () => {
                 <div className='w-full py-2 grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 gap-16'>
                     <div className='py-2 flex flex-col gap-2'>
                         <div className='flex flex-row items-center gap-2'>
-                            <Image src='/assets/images/ctihc_logo.png' alt='ctihc_logo' height={100} width={80}/>
+                            <Image src={AppWrite.getImageUrl('6665b4b200197c391da1', settings['ctihc_logo'])} alt='ctihc_logo' height={100} width={80}/>
                             <h1 className='text-white font-roboto rtl:font-cairo font-semibold capitalize'>{lang('company_logo_text')}</h1>
 
                         </div>
                         <div className='flex flex-row items-center gap-2'>
-                            <Image src='/assets/images/ctihc_second_logo.png' className='rounded-lg' alt='ctihc_logo' height={100} width={80}/>
+                            <Image src={AppWrite.getImageUrl('6665b4b200197c391da1', settings['ctihc_second_logo'])} className='rounded-lg' alt='ctihc_logo' height={100} width={80}/>
                             <h1 className='text-white font-roboto rtl:font-cairo font-semibold capitalize'>{lang('ministry_logo_text')}</h1>
 
                         </div>
