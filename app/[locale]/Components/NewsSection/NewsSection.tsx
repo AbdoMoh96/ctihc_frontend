@@ -3,6 +3,7 @@ import {useTranslations} from "next-intl";
 import Container from "@/app/[locale]/Components/Layout/Container";
 import AnimatedSection from "@/Components/Animation/AnimatedSection";
 import AppWrite from "@/helpers/appwrite.helper";
+import {Query} from "appwrite";
 
 interface propTypes {
     locale : "en" | "ar";
@@ -12,7 +13,12 @@ const NewsSection : React.FC<propTypes> = async ({locale}) => {
 
     const lang = useTranslations('homePage');
 
-    let news = await AppWrite.read('66683c980030562318e8');
+    let news = await AppWrite.read('66683c980030562318e8', [
+        Query.limit(4),
+        Query.orderDesc('$createdAt')
+    ]);
+
+    console.log(news);
 
     return <AnimatedSection className="py-2 mt-28" id='news-section'>
         <Container className='gap-7 lg:gap-5 flex flex-col justify-center items-center'>
