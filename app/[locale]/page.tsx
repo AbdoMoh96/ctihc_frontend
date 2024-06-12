@@ -28,7 +28,7 @@ export default function HomePage({params: {locale}} : HomePageProps) {
 
               <AboutSection/>
 
-              <NewsSection/>
+              <NewsSection locale={locale}/>
 
 
               <ProductsSection/>
