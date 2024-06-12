@@ -3,7 +3,7 @@ import config from "@/helpers/config.helper";
 
 class AppWrite {
 
-    private static client: Client = new Client().setEndpoint(config.AppWriteUrl).setProject(config.AppWriteProjectId);
+    private static client: Client = new Client().setEndpoint(config.AppWriteUrl).setProject(config.AppWriteProjectId).setKey(config.AppWriteApiKey);
     private static databases: Databases = new Databases(AppWrite.client);
 
     public static read = async (collectionId: string, queries: string[] = [], databaseId  = '') => {
