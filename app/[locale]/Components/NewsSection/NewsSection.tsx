@@ -18,8 +18,6 @@ const NewsSection : React.FC<propTypes> = async ({locale}) => {
         Query.orderDesc('$createdAt')
     ]);
 
-    console.log(news);
-
     return <AnimatedSection className="py-2 mt-28" id='news-section'>
         <Container className='gap-7 lg:gap-5 flex flex-col justify-center items-center'>
             <h1 className='text-3xl font-roboto rtl:font-cairo font-semibold text-center'>{lang('news_title')}</h1>
@@ -27,7 +25,7 @@ const NewsSection : React.FC<propTypes> = async ({locale}) => {
 
                 {news?.map((newsItem: any) => {
                     return <div
-                        key={newsItem.id}
+                        key={newsItem.$id}
                         className={`transition-all group relative ease-in-out duration-300 w-full flex flex-col-reverse  p-3 h-72 rounded-2xl cursor-pointer bg-cover`} style={{ backgroundImage: "url(" + AppWrite.getImageUrl('6665ab0900218c5abe27', newsItem.thumbnail) + ")" }}>
                         <div
                             className='transition-all ease-in-out duration-300 absolute top-0 z-10 left-0 w-full h-full rounded-2xl opacity-0 group-hover:opacity-50 bg-gradient-to-b from-transparent to-gray-950'/>
