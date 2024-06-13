@@ -46,7 +46,7 @@ const Nav: React.FC<propTypes> = () => {
         <nav className={`h-20`}>
             <div className={`h-20 font-roboto rtl:font-cairo transition-all bg-zinc-800 text-white flex justify-center duration-500 ease-in-out ${navState}`}>
                   <Container className='flex justify-between items-center'>
-                   <Image src={AppWrite.getImageUrl('6665b4b200197c391da1', data['ctihc_logo'])} alt='ctihc_logo' height={75} width={75} />
+                   <Image src={AppWrite.getImageUrl('6665b4b200197c391da1', data?.ctihc_logo)} alt='ctihc_logo' height={75} width={75} />
                    <div className={`fixed transition-all duration-500 ease-in-out top-20 z-500 w-full text-white bg-zinc-800 flex pt-4 lg:pt-0 gap-6 flex-col justify-start items-center lg:justify-between lg:transition-none lg:w-auto lg:flex-row lg:gap-7 lg:bg-transparent h-full lg:text-white lg:mt-0 lg:static ${showMenu ? 'right-0' : '-right-full' }`}>
                           <NavLink href='/' replace={true} onClick={() => setShowMenu(false)} text={local('home')}/>
                           <NavLink href='/about' replace={true} onClick={() => setShowMenu(false)} text={local('about_us')}/>
