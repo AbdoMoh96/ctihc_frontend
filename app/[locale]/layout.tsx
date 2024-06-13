@@ -26,7 +26,7 @@ export default async function RootLayout({
               params: {locale}
        }: {
     children: React.ReactNode;
-    params: {locale: string};
+    params: {locale: 'en' | 'ar'};
 }) {
 
     const messages = await getMessages();
@@ -37,7 +37,7 @@ export default async function RootLayout({
             <body>
               <DynamicNav/>
                {children}
-             <Footer/>
+             <Footer locale={locale}/>
             </body>
         </NextIntlClientProvider>
         </body>
