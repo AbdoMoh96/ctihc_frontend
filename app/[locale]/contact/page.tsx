@@ -9,6 +9,7 @@ import { MdOutlineFax } from "react-icons/md";
 import { MdOutlineEmail } from "react-icons/md";
 import ContactForm from "@/app/[locale]/contact/Components/ContactForm";
 import Data from "@/Data/data";
+import Map from "@/app/[locale]/Components/Map";
 
 interface ContactPageProps {
     params: {
@@ -50,11 +51,7 @@ export default function ContactPage({params: {locale}} : ContactPageProps) {
                     </Container>
                 </AnimatedSection>
 
-                <iframe
-                    src={Data.companyMapsLocation}
-                    loading="lazy"
-                    className="border-0 w-full h-72"
-                    referrerPolicy="no-referrer-when-downgrade"></iframe>
+                <Map className='h-72'/>
             </main>
         </>
     );
