@@ -1,10 +1,11 @@
-import {Client, Databases, Query} from 'node-appwrite';
+import {Client, Databases, Query, Storage} from 'node-appwrite';
 import config from "@/helpers/config.helper";
 
 class AppWrite {
 
     private static client: Client = new Client().setEndpoint(config.AppWriteUrl).setProject(config.AppWriteProjectId).setKey(config.AppWriteApiKey);
     private static databases: Databases = new Databases(AppWrite.client);
+    private static storage: Storage = new Storage(AppWrite.client);
 
     public static read = async (collectionId: string, queries: string[] = [], databaseId  = '') => {
         try {
@@ -41,6 +42,15 @@ class AppWrite {
 
     public static getImageUrl = (buketId : string, imageId : string) => {
         return `${config.AppWriteUrl}/storage/buckets/${buketId}/files/${imageId}/view?project=${config.AppWriteProjectId}`;
+    }
+
+    public static downloadFile = async (bucketId: string, fileId: string) => {
+        try {
+            const response = await AppWrite.storage.getFileDownload(bucketId, fileId);
+            return response; // Return response directly if it is a Blob
+        } catch (error) {
+            console.error('Error downloading file:', error);
+        }
     }
 }
 
