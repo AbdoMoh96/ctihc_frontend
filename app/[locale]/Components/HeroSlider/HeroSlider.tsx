@@ -30,7 +30,7 @@ const HeroSlider : React.FC<propTypes> = () => {
     const axiosInstance = useAxiosInstance();
 
     useEffect(() => {
-        let sliders = axiosInstance.post('/client/slider/getSlidesUsingParentSlug', {
+        axiosInstance.post('/client/slider/getSlidesUsingParentSlug', {
             "slug" : "home-slider"
         }).then(response => setSlides(response.data));
 
