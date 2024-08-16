@@ -1,5 +1,6 @@
 'use client'
 import React,{useEffect, useState} from 'react';
+import useAxiosInstance from '@/hooks/axios.hook';
 import { useParams } from 'next/navigation';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -27,6 +28,7 @@ const HeroSlider : React.FC<propTypes> = () => {
 
     const [slides, setSlides] = useState<any>([]);
     const {locale} = useParams<{ locale: "en" | "ar"}>();
+    const axiosInstance = useAxiosInstance();
 
     useEffect(() => {
         let response = AppWrite.read('66602a77001e4e77b8e5', [
@@ -35,6 +37,11 @@ const HeroSlider : React.FC<propTypes> = () => {
         ]).then(response => {
             setSlides(response);
         }).catch(error => console.log(error));
+
+        let sliders = axiosInstance.post('/client/slider/getSlidesUsingParentSlug', {
+            "slug" : "home-slider"
+        }).then(data => console.log(data));
+
     }, []);
 
     return <Swiper
