@@ -1,5 +1,6 @@
 interface IConfig {
     AppUrl: string;
+    AppStorage: string;
     AppWriteUrl: string;
     AppWriteProjectId: string;
     AppWriteDataBaseId: string;
@@ -11,6 +12,7 @@ interface IConfig {
 
 const config : IConfig = {
     AppUrl: process.env.NEXT_PUBLIC_SERVER_URL ?? '',
+    AppStorage: process.env.NEXT_PUBLIC_STORAGE_URL ?? '',
     AppWriteUrl: process.env.NEXT_PUBLIC_APPWRITE_URL ?? '',
     AppWriteProjectId: process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID ?? '',
     AppWriteDataBaseId: process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID ?? '',
