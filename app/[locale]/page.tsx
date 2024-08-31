@@ -26,7 +26,7 @@ export default function HomePage({params: {locale}} : HomePageProps) {
                   <HeroSlider slides={slides}/>
               </section>
 
-              <AboutSection/>
+              <AboutSection locale={locale}/>
 
               <NewsSection locale={locale}/>
 

@@ -1,27 +1,34 @@
-'use client'
-import React,{useEffect, useState} from 'react';
+import React from 'react';
+import config from '@/helpers/config.helper';
 import Container from "@/app/[locale]/Components/Layout/Container";
 import AnimatedSection from "@/Components/Animation/AnimatedSection";
-import useAxiosInstance from '@/hooks/axios.hook';
 import { useTranslations } from "next-intl";
 
+interface propTypes {
+    locale: 'en' | 'ar'
+}
 
-interface propTypes {}
+async function getData(locale: 'en' | 'ar'){
+    const response = await fetch(`${config.AppUrl}/client/data/getData`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept-Language': locale,
+        },
+        body: JSON.stringify({
+            "group": "about_us"
+        }),
+        next:{ revalidate: config.Revalidate }
+    });
 
-const AboutSection: React.FC<propTypes> = () => {
+    return response.json();
+}
+
+const AboutSection: React.FC<propTypes> = async ({locale}) => {
 
     const lang = useTranslations('homePage');
-    const [data, setData] = useState<any>();
-    const axiosInstance = useAxiosInstance();
 
-    useEffect(() => {
-
-        axiosInstance.post('/client/data/getData', {
-            "group" : "about_us"
-        }).then(response => setData(response.data));
-
-    }, []);
-
+    const data = await getData(locale);
 
     return (
         <AnimatedSection className="py-2 lg:mt-6" id='about-section'>

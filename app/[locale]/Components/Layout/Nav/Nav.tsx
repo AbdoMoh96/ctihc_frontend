@@ -3,8 +3,8 @@ import React, {useEffect, useState} from 'react';
 import Container from '@/app/[locale]/Components/Layout/Container';
 import NavLink from "@/app/[locale]/Components/Layout/Nav/Components/NavLink";
 import config from '@/helpers/config.helper';
-import useAxiosInstance from '@/hooks/axios.hook';
 import { FaBars } from "react-icons/fa";
+import { useParams } from 'next/navigation';
 import Image from 'next/image';
 /*import DropDown from "@/app/[locale]/Components/Layout/Nav/Components/DropDown";
 import DropDownLink from "@/app/[locale]/Components/Layout/Nav/Components/DropDownLink";*/
@@ -17,9 +17,9 @@ const Nav: React.FC<propTypes> = () => {
     const [navState, setNavState] = useState<string>('');
     const [showMenu, setShowMenu] = useState<boolean>(false);
     const [data, setData] = useState<any>();
+    const {locale} = useParams<{ locale: "en" | "ar"}>();
     const lang = useTranslations('Index')('lang');
     const local = useTranslations('nav');
-    const axiosInstance = useAxiosInstance();
 
 
     useEffect(() => {
@@ -40,9 +40,17 @@ const Nav: React.FC<propTypes> = () => {
             window.scrollTo(window.scrollX, window.scrollY + 1);
         }
 
-        axiosInstance.post('/client/data/getData', {
-            "group" : "settings"
-        }).then(response => setData(response.data));
+        fetch(`${config.AppUrl}/client/data/getData`,{
+            method: 'POST',
+            headers: {
+             'Content-Type': 'application/json',
+             'Accept-Language' : locale
+            },
+            body: JSON.stringify({
+                "group" : "settings",
+            })
+        }).then(response => response.json())
+          .then(data => setData(data));
 
     }, []);
 

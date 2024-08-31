@@ -1,7 +1,6 @@
 'use client'
 import React,{useEffect, useState} from 'react';
 import config from '@/helpers/config.helper';
-import useAxiosInstance from '@/hooks/axios.hook';
 import { useParams } from 'next/navigation';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -27,12 +26,20 @@ const HeroSlider : React.FC<propTypes> = () => {
 
     const [slides, setSlides] = useState<any>([]);
     const {locale} = useParams<{ locale: "en" | "ar"}>();
-    const axiosInstance = useAxiosInstance();
 
     useEffect(() => {
-        axiosInstance.post('/client/slider/getSlidesUsingParentSlug', {
-            "slug" : "home-slider"
-        }).then(response => setSlides(response.data));
+
+        fetch(`${config.AppUrl}/client/slider/getSlidesUsingParentSlug`,{
+            method: 'POST',
+            headers: {
+             'Content-Type': 'application/json',
+             'Accept-Language' : locale
+            },
+            body: JSON.stringify({
+                "slug" : "home-slider"
+            })
+        }).then(response => response.json())
+          .then(data => setSlides(data));
 
     }, []);
 
