@@ -38,11 +38,11 @@ const PartnersSection : React.FC<propTypes> = async ({locale}) => {
                 {partners?.map((partner: any) => {
                     return <div
                         key={partner.id}
-                        className='w-full flex flex-col shadow-xl h-72 rounded-2xl cursor-pointer transition-all duration-300 ease-in-out lg:hover:scale-105'>
+                        className='w-full flex flex-col shadow-xl h-96 rounded-2xl cursor-pointer transition-all duration-300 ease-in-out lg:hover:scale-105'>
                         <div
-                            className='rounded-t-2xl  bg-cover h-[80%]' style={{ backgroundImage: "url(" + `${config.AppStorage}/${partner.image}` + ")" }}/>
+                            className='rounded-t-2xl  bg-cover h-[100%]' style={{ backgroundImage: "url(" + `${config.AppStorage}/${partner.image}` + ")" }}/>
                         <div
-                            className='text-black bg-white h-[20%] font-roboto rtl:font-cairo flex flex-col justify-center items-center gap-1 rounded-b-2xl p-2'>
+                            className='text-black bg-white h-[12%] font-roboto rtl:font-cairo flex flex-col justify-center items-center gap-1 rounded-b-2xl p-2'>
                             <h4>
                                 {partner.title}
                             </h4>
