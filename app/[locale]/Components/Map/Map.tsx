@@ -1,13 +1,30 @@
 import React from 'react';
-import AppWrite from "@/helpers/appwrite.helper";
+import config from '@/helpers/config.helper';
 
 interface propTypes {
     className?: string;
+    locale: 'en' | 'ar';
 }
 
-const Map: React.FC<propTypes> = async ({className}) => {
+async function getData(locale: 'en' | 'ar'){
+    const response = await fetch(`${config.AppUrl}/client/data/getData`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept-Language': locale,
+        },
+        body: JSON.stringify({
+            "group": "contact_us"
+        }),
+        next:{ revalidate: config.Revalidate }
+    });
 
-    let contactUs : any = await AppWrite.readData('contact_us').catch(() => contactUs = {});
+    return response.json();
+}
+
+const Map: React.FC<propTypes> = async ({className, locale}) => {
+
+    let contactUs : any = await getData(locale);
 
     return <iframe
         src={contactUs?.location}

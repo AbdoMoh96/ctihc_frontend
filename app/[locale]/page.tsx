@@ -33,7 +33,7 @@ export default function HomePage({params: {locale}} : HomePageProps) {
 
               <PartnersSection locale={locale}/>
 
-              <Map className='h-60 mt-24'/>
+              <Map locale={locale} className='h-60 mt-24'/>
           </main>
       </>
     );
