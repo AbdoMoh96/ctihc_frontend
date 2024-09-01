@@ -17,8 +17,8 @@
     "about_us_button" : "know more",
     "news_title" : "latest news",
     "news_button" : "show all news",
-    "products_title": "our products",
-    "products_button": "show all products"
+    "partners_title": "our partners",
+    "partners_button": "show all partners"
   },
   "contactPage" : {
     "contact_us" : "Contact Us",
