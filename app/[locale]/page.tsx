@@ -5,7 +5,7 @@ import {useTranslations} from "next-intl";
 import {unstable_setRequestLocale} from 'next-intl/server';
 import AboutSection from "@/app/[locale]/Components/AboutSection";
 import NewsSection from "@/app/[locale]/Components/NewsSection";
-import ProductsSection from "@/app/[locale]/Components/ProductsSection";
+import PartnersSection from "@/app/[locale]/Components/PartnersSection";
 import Map from "@/app/[locale]/Components/Map";
 
 interface HomePageProps {
@@ -31,7 +31,7 @@ export default function HomePage({params: {locale}} : HomePageProps) {
               <NewsSection locale={locale}/>
 
 
-              <ProductsSection locale={locale}/>
+              <PartnersSection locale={locale}/>
 
               <Map className='h-60 mt-24'/>
           </main>

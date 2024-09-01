@@ -9,7 +9,7 @@ interface propTypes {
     locale : "en" | "ar";
 }
 
-const ProductsSection : React.FC<propTypes> = async ({locale}) => {
+const PartnersSection : React.FC<propTypes> = async ({locale}) => {
 
     const lang = useTranslations('homePage');
 
@@ -47,4 +47,4 @@ const ProductsSection : React.FC<propTypes> = async ({locale}) => {
     </AnimatedSection>
 }
 
-export default ProductsSection;
+export default PartnersSection;
