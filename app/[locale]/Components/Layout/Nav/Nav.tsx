@@ -2,8 +2,9 @@
 import React, {useEffect, useState} from 'react';
 import Container from '@/app/[locale]/Components/Layout/Container';
 import NavLink from "@/app/[locale]/Components/Layout/Nav/Components/NavLink";
-import AppWrite from "@/helpers/appwrite.helper";
+import config from '@/helpers/config.helper';
 import { FaBars } from "react-icons/fa";
+import { useParams } from 'next/navigation';
 import Image from 'next/image';
 /*import DropDown from "@/app/[locale]/Components/Layout/Nav/Components/DropDown";
 import DropDownLink from "@/app/[locale]/Components/Layout/Nav/Components/DropDownLink";*/
@@ -16,6 +17,7 @@ const Nav: React.FC<propTypes> = () => {
     const [navState, setNavState] = useState<string>('');
     const [showMenu, setShowMenu] = useState<boolean>(false);
     const [data, setData] = useState<any>();
+    const {locale} = useParams<{ locale: "en" | "ar"}>();
     const lang = useTranslations('Index')('lang');
     const local = useTranslations('nav');
 
@@ -38,7 +40,17 @@ const Nav: React.FC<propTypes> = () => {
             window.scrollTo(window.scrollX, window.scrollY + 1);
         }
 
-        AppWrite.readData('settings').then(data => setData(data));
+        fetch(`${config.AppUrl}/client/data/getData`,{
+            method: 'POST',
+            headers: {
+             'Content-Type': 'application/json',
+             'Accept-Language' : locale
+            },
+            body: JSON.stringify({
+                "group" : "settings",
+            })
+        }).then(response => response.json())
+          .then(data => setData(data));
 
     }, []);
 
@@ -46,7 +58,7 @@ const Nav: React.FC<propTypes> = () => {
         <nav className={`h-20`}>
             <div className={`h-20 font-roboto rtl:font-cairo transition-all bg-zinc-800 text-white flex justify-center duration-500 ease-in-out ${navState}`}>
                   <Container className='flex justify-between items-center'>
-                   <Image src={AppWrite.getImageUrl('6665b4b200197c391da1', data?.ctihc_logo)} alt='ctihc_logo' height={75} width={75} />
+                   <Image src={config.AppStorage+'/'+data?.ctihc_logo} alt='ctihc_logo' height={75} width={75} />
                    <div className={`fixed transition-all duration-500 ease-in-out top-20 z-500 w-full text-white bg-zinc-800 flex pt-4 lg:pt-0 gap-6 flex-col justify-start items-center lg:justify-between lg:transition-none lg:w-auto lg:flex-row lg:gap-7 lg:bg-transparent h-full lg:text-white lg:mt-0 lg:static ${showMenu ? 'right-0' : '-right-full' }`}>
                           <NavLink href='/' replace={true} onClick={() => setShowMenu(false)} text={local('home')}/>
                           <NavLink href='/about' replace={true} onClick={() => setShowMenu(false)} text={local('about_us')}/>

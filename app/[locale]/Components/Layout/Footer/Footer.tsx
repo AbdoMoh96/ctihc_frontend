@@ -8,20 +8,51 @@ import { LuPhone } from "react-icons/lu";
 import { MdOutlineFax } from "react-icons/md";
 import { MdOutlineEmail } from "react-icons/md";
 import {useTranslations} from "next-intl";
+import config from '@/helpers/config.helper';
 import Image from 'next/image';
 import Link from "next/link";
-import AppWrite from "@/helpers/appwrite.helper";
 
 
 interface propTypes {
     locale: 'en' | 'ar';
 }
 
+async function getData(locale: 'en' | 'ar'){
+    const [contactsResponse, settingsResponse] = await Promise.all([
+        fetch(`${config.AppUrl}/client/data/getData`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept-Language': locale,
+            },
+            body: JSON.stringify({
+                "group": "contact_us"
+            }),
+            next: { revalidate: config.Revalidate }
+        }),
+        fetch(`${config.AppUrl}/client/data/getData`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept-Language': locale,
+            },
+            body: JSON.stringify({
+                "group": "settings"
+            }),
+            next: { revalidate: config.Revalidate }
+        })
+    ]);
+
+    return {
+        contactUs: await contactsResponse.json(),
+        settings: await settingsResponse.json()
+    };
+}
+
 const Footer: React.FC<propTypes> = async ({locale}) => {
 
     const lang = useTranslations('footer');
-    let contactUs : any = await AppWrite.readData('contact_us').catch(() => contactUs = {});
-    let settings : any = await AppWrite.readData('settings').catch(() => settings = {});
+    const { contactUs, settings } = await getData(locale);
 
 
     return (
@@ -30,13 +61,13 @@ const Footer: React.FC<propTypes> = async ({locale}) => {
                 <div className='w-full py-2 grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 gap-16'>
                     <div className='py-2 flex flex-col gap-2'>
                         <div className='flex flex-row items-center gap-2'>
-                            <Image src={AppWrite.getImageUrl('6665b4b200197c391da1', settings['ctihc_logo'])} alt='ctihc_logo' height={100} width={80}/>
-                            <h1 className='text-white font-roboto rtl:font-cairo font-semibold capitalize'>{settings['ctihc_logo_text_'+locale]}</h1>
+                            <Image src={config.AppStorage+'/'+settings['ctihc_logo']} alt='ctihc_logo' height={100} width={80}/>
+                            <h1 className='text-white font-roboto rtl:font-cairo font-semibold capitalize'>{settings['ctihc_logo_text']}</h1>
 
                         </div>
                         <div className='flex flex-row items-center gap-2'>
-                            <Image src={AppWrite.getImageUrl('6665b4b200197c391da1', settings['ctihc_second_logo'])} className='rounded-lg' alt='ctihc_logo' height={100} width={80}/>
-                            <h1 className='text-white font-roboto rtl:font-cairo font-semibold capitalize'>{settings['ctihc_second_logo_text_'+locale]}</h1>
+                            <Image src={config.AppStorage+'/'+settings['ctihc_second_logo']} className='rounded-lg' alt='ctihc_logo' height={100} width={80}/>
+                            <h1 className='text-white font-roboto rtl:font-cairo font-semibold capitalize'>{settings['ctihc_second_logo_text']}</h1>
 
                         </div>
                     </div>
@@ -87,7 +118,7 @@ const Footer: React.FC<propTypes> = async ({locale}) => {
                         <h1 className='font-roboto rtl:font-cairo mb-2 font-semibold text-white capitalize'>{lang('contact_us')}</h1>
                         <div className='flex flex-col font-roboto rtl:font-cairo text-gray-400 items-center gap-2 lg:items-start'>
                             <Link className='transition-all capitalize flex items-center gap-1 duration-500 ease-in-out hover:text-amber-500 w-fit'
-                                  href={contactUs?.location_short_url} target="_blank"><CiLocationOn size={20}/>{contactUs['address_'+locale]}</Link>
+                                  href={contactUs?.location_short_url} target="_blank"><CiLocationOn size={20}/>{contactUs['address']}</Link>
                             <Link className='transition-all capitalize flex items-center gap-1 duration-500 ease-in-out hover:text-amber-500 w-fit'
                                   href={'tel:'+contactUs.phone_action}><LuPhone size={20}/> {contactUs?.phone}</Link>
                             {contactUs?.fax?.length > 0 &&
@@ -103,8 +134,8 @@ const Footer: React.FC<propTypes> = async ({locale}) => {
                 </div>
             </Container>
             <section className='flex flex-col justify-center items-center text-white font-light font-roboto rtl:font-cairo gap-7 border-t border-white pt-8 my-5'>
-                <span>{settings['copywrite_title_'+locale]}</span>
-                <span>{settings['copywrite_description_'+locale]}</span>
+                <span>{settings['copyright_title']}</span>
+                <span>{settings['copyright_description']}</span>
             </section>
         </footer>
     )

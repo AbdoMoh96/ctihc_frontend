@@ -17,21 +17,21 @@
     "about_us_button": "اعرف المزيد",
     "news_title": "أحدث الأخبار",
     "news_button": "عرض جميع الأخبار",
-    "products_title": "منتجاتنا",
-    "products_button": "عرض جميع المنتجات"
+    "partners_title": "شركائنا",
+    "partners_button": "عرض جميع شركائنا"
   },
-  "contactPage" : {
+  "contactPage": {
     "contact_us": "اتصل بنا",
     "follow_us_on": "تابعنا على",
     "address": "8 السيد محمد طاهر",
-    "full_name" : "الاسم كامل",
-    "phone" : "رقم الهاتف",
-    "email" : "الأيميل",
-    "subject" : "الموضوع",
-    "message" : "الرسالة",
-    "contact_button" : "اتصل بنا"
+    "full_name": "الاسم كامل",
+    "phone": "رقم الهاتف",
+    "email": "الأيميل",
+    "subject": "الموضوع",
+    "message": "الرسالة",
+    "contact_button": "اتصل بنا"
   },
-  "aboutPage" : {},
+  "aboutPage": {},
   "footer": {
     "company_logo_text": "الشركة القابضة للقطن والنسيج",
     "ministry_logo_text": "وزارة قطاع الأعمال العام",
