@@ -34,11 +34,9 @@ export default async function RootLayout({
         <html lang={locale} dir={locale === 'en' ? 'ltr' : 'rtl'}>
         <body>
         <NextIntlClientProvider messages={messages}>
-            <body>
               <DynamicNav/>
                {children}
              <Footer locale={locale}/>
-            </body>
         </NextIntlClientProvider>
         </body>
         </html>
