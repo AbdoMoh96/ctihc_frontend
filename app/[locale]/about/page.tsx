@@ -32,7 +32,7 @@ const AboutPageContent: React.FC<{locale: 'en' | 'ar'}> = async ({locale}) => {
     const data = await getData(locale);
 
    return <Container className='gap-7 lg:gap-5'>
-   <h1 className='font-roboto font-bold text-black'>{data?.about_us_page_title}</h1>
+   <h1 className='font-roboto rtl:font-cairo font-bold text-xl text-black border-b-2 border-b-amber-500 inline-block pb-2 mb-2'>{data?.about_us_page_title}</h1>
    <div dangerouslySetInnerHTML={{__html: data?.about_us_page_description}}/>
 </Container>
 }
