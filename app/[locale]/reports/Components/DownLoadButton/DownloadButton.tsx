@@ -1,5 +1,6 @@
 'use client'
 import React from 'react';
+import downloadFile from '@/helpers/download.helper';
 
 
 interface PropTypes {
@@ -7,13 +8,17 @@ interface PropTypes {
     fileUrl: string;
 }
 
-const DownloadButton : React.FC<PropTypes> = ({fileUrl}) => {
+const DownloadButton : React.FC<PropTypes> = ({fileName, fileUrl}) => {
 
+    const handelDownloadFile = () => {
+        downloadFile(fileName, fileUrl);
+    }
 
 
     return <button
+    onClick={() => handelDownloadFile()}
     className='font-roboto transition-all ease-in-out duration-300 border border-black rounded-full py-1 px-2 hover:bg-zinc-800 hover:text-white'>
-       Download 2020 Report
+       Download {fileName}
  </button>
 }
 
