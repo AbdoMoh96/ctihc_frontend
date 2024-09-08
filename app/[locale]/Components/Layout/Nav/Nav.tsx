@@ -54,6 +54,14 @@ const Nav: React.FC<propTypes> = () => {
 
     }, []);
 
+    useEffect(() => {
+        if(showMenu){
+           document.querySelector('body')?.classList.add('stop-scrolling');
+        }else{
+            document.querySelector('body')?.classList.remove('stop-scrolling');
+        }
+    },[showMenu])
+
     return (
         <nav className={`h-20`}>
             <div className={`h-20 font-roboto rtl:font-cairo transition-all bg-zinc-800 text-white flex justify-center duration-500 ease-in-out ${navState}`}>
