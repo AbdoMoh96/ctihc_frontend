@@ -38,7 +38,10 @@ const NewsSection : React.FC<propTypes> = async ({locale}) => {
 
                 {news?.map((newsItem: any) => {
                     return <Link
-                        href={`/news/${newsItem.slug}`}
+                        href={{
+                            pathname: '/news/[slug]',
+                            params: {slug: newsItem.slug}
+                          }}
                         key={newsItem.id}
                         className={`transition-all group relative ease-in-out duration-300 w-full flex flex-col-reverse  p-3 h-72 rounded-2xl cursor-pointer bg-cover`} style={{ backgroundImage: "url(" + `${config.AppStorage}/${newsItem.thumbnail}` + ")" }}>
                         <div
