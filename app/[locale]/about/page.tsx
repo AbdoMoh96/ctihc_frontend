@@ -40,7 +40,7 @@ const AboutPageContent: React.FC<{locale: 'en' | 'ar'}> = async ({locale}) => {
 export default function AboutPage({params: {locale}} : AboutPageProps) {
     unstable_setRequestLocale(locale);
 
-   const lang = useTranslations('aboutPage');
+   //const lang = useTranslations('aboutPage');
 
     return (
         <>

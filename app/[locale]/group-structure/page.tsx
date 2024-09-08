@@ -40,7 +40,7 @@ const GroupStructurePageContent: React.FC<{locale: 'en' | 'ar'}> = async ({local
 export default function GroupStructurePage({params: {locale}} : AboutPageProps) {
     unstable_setRequestLocale(locale);
 
-   const lang = useTranslations('aboutPage');
+//    const lang = useTranslations('groupStructurePage');
 
     return (
         <>
