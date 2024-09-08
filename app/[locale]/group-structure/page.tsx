@@ -45,7 +45,7 @@ export default function GroupStructurePage({params: {locale}} : AboutPageProps) 
     return (
         <>
             <main>
-                <AnimatedSection className="py-2 h-[70vh] mt-10 rtl:mr-6 ml-6" id='contact-section'>
+                <AnimatedSection className="py-6 h-min-[70vh] mt-4 rtl:mr-6 ml-6" id='contact-section'>
                    <GroupStructurePageContent locale={locale}></GroupStructurePageContent>
                 </AnimatedSection>
             </main>
