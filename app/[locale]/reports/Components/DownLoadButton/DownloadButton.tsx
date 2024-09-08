@@ -2,9 +2,11 @@
 import React from 'react';
 
 
-interface PropTypes {}
+interface PropTypes {
+    fileUrl: string
+}
 
-const DownloadButton : React.FC<PropTypes> = () => {
+const DownloadButton : React.FC<PropTypes> = ({fileUrl}) => {
 
     // const download = async () => {
     //     try {
