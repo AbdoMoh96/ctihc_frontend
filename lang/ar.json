@@ -32,6 +32,9 @@
     "contact_button": "اتصل بنا"
   },
   "aboutPage": {},
+  "reportsPage": {
+    "download": "تحميل"
+  },
   "footer": {
     "company_logo_text": "الشركة القابضة للقطن والنسيج",
     "ministry_logo_text": "وزارة قطاع الأعمال العام",
