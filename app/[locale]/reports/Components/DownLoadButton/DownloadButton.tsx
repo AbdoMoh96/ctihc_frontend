@@ -1,6 +1,7 @@
 'use client'
 import React from 'react';
 import downloadFile from '@/helpers/download.helper';
+import {useTranslations} from 'next-intl';
 
 
 interface PropTypes {
@@ -10,6 +11,8 @@ interface PropTypes {
 
 const DownloadButton : React.FC<PropTypes> = ({fileName, fileUrl}) => {
 
+    const trans = useTranslations('reportsPage');
+
     const handelDownloadFile = () => {
         downloadFile(fileName, fileUrl);
     }
@@ -18,7 +21,7 @@ const DownloadButton : React.FC<PropTypes> = ({fileName, fileUrl}) => {
     return <button
     onClick={() => handelDownloadFile()}
     className='font-roboto transition-all ease-in-out duration-300 border border-black rounded-full py-1 px-2 hover:bg-zinc-800 hover:text-white'>
-       Download {fileName}
+       {trans('download')} {fileName}
  </button>
 }
 

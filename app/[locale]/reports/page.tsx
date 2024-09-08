@@ -37,7 +37,7 @@ const ReportsPageContent: React.FC<{locale:'en' | 'ar'}> = async ({locale}) => {
     return (
     <>
         {reports.map((report: any) => {
-           return <div className='flex flex-col bg-white p-4 w-4/12 rounded gap-2 items-center shadow-xl' key={report.id}>
+           return <div className='flex flex-col bg-white p-4 w-4/12 rounded gap-2 items-center shadow-2xl' key={report.id}>
               {report.title}
               <DownloadButton fileName={report.title} fileUrl={`${config.AppStorage}/${report.document_path}`}/>
            </div>
@@ -57,7 +57,7 @@ export default function ReportsPage({params: {locale}} : AboutPageProps) {
         <>
             <main>
                 <AnimatedSection className="py-2 h-[70vh] mt-28" id='contact-section'>
-                <Container className='flex flex-col items-center gap-7 lg:gap-19'>
+                <Container className='flex flex-col items-center gap-7 lg:gap-20'>
                      <ReportsPageContent locale={locale}/>
                 </Container>
                 </AnimatedSection>
