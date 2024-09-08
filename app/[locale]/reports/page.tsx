@@ -39,7 +39,7 @@ const ReportsPageContent: React.FC<{locale:'en' | 'ar'}> = async ({locale}) => {
         {reports.map((report: any) => {
            return <div className='flex flex-col bg-white p-4 w-4/12 rounded gap-2 items-center shadow-xl' key={report.id}>
               {report.title}
-              <DownloadButton fileUrl={`${config.AppStorage}/${report.document_path}`}/>
+              <DownloadButton fileName={report.title} fileUrl={`${config.AppStorage}/${report.document_path}`}/>
            </div>
         })}
     </>
