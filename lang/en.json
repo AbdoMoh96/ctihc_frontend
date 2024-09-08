@@ -32,6 +32,9 @@
     "contact_button" : "contact us"
   },
   "aboutPage" : {},
+  "reportsPage" : {
+    "download" : "Download"
+  },
   "footer" : {
     "company_logo_text" : "Cotton & Textile Industries Holding",
     "ministry_logo_text" : "Ministry Of Public Business Sector",

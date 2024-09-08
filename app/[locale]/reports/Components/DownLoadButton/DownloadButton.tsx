@@ -1,32 +1,27 @@
 'use client'
 import React from 'react';
+import downloadFile from '@/helpers/download.helper';
+import {useTranslations} from 'next-intl';
 
 
-interface PropTypes {}
+interface PropTypes {
+    fileName: string;
+    fileUrl: string;
+}
 
-const DownloadButton : React.FC<PropTypes> = () => {
+const DownloadButton : React.FC<PropTypes> = ({fileName, fileUrl}) => {
 
-    // const download = async () => {
-    //     try {
-    //         const result = await AppWrite.downloadFile('documents', '6678189b003c260dcdee');
-    //         if (result) {
-    //             const url = window.URL.createObjectURL(result);
-    //             const a = document.createElement('a');
-    //             a.href = url;
-    //             a.download = '2020_Report.pdf'; // Change the file name and extension accordingly
-    //             document.body.appendChild(a);
-    //             a.click();
-    //             a.remove();
-    //             window.URL.revokeObjectURL(url);
-    //         }
-    //     } catch (error) {
-    //         console.error('Error downloading file:', error);
-    //     }
-    // }
+    const trans = useTranslations('reportsPage');
+
+    const handelDownloadFile = () => {
+        downloadFile(fileName, fileUrl);
+    }
+
 
     return <button
+    onClick={() => handelDownloadFile()}
     className='font-roboto transition-all ease-in-out duration-300 border border-black rounded-full py-1 px-2 hover:bg-zinc-800 hover:text-white'>
-       Download 2020 Report
+       {trans('download')} {fileName}
  </button>
 }
 
