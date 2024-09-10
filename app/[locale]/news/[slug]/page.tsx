@@ -38,12 +38,12 @@ const NewsItemContent: React.FC<{locale: 'en'|'ar', slug: string}> = async ({loc
    return (
    <div className='flex flex-col gap-6'>
          <ImageWrapper
-         className='h-60 shadow-lg rounded w-[50%] block mt-4'
+         className='h-60 shadow-lg rounded lg:w-[50%] block mt-4'
          imageClass='rounded'
          src={`${config.AppStorage}/${newsItem.thumbnail}`}
          alt='news item image'/>
          <h1 className='font-roboto rtl:font-cairo font-bold text-xl text-black border-b-2 border-b-amber-500 inline-block pb-2 mb-2 w-[50%]'>{newsItem?.title}</h1>
-         <div className='font-roboto rtl:font-cairo w-[50%]'
+         <div className='font-roboto rtl:font-cairo lg:w-[50%]'
          dangerouslySetInnerHTML={{__html: newsItem?.description}}/>
    </div>
    )
