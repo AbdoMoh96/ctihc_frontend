@@ -1,53 +1,55 @@
 {
-  "Index" : {
-    "lang" : "en",
-    "dir" : "ltr"
+  "Index": {
+    "lang": "en",
+    "dir": "ltr"
   },
-  "nav" : {
-    "home" : "Home",
-    "about_us" : "About Us",
-    "reports" : "Reports",
-    "group_structure" : "Group Structure",
-    "news" : "News",
-    "contact_us" : "Contact Us"
+  "nav": {
+    "home": "Home",
+    "about_us": "About Us",
+    "reports": "Reports",
+    "group_structure": "Group Structure",
+    "news": "News",
+    "contact_us": "Contact Us"
   },
-  "homePage" : {
-    "about_us_title" : "The Cotton, Spinning, Weaving, and Ready-Made Garments Holding Company",
-    "about_us_description" : "The Cotton, Spinning, Weaving, and Ready-Made Garments Holding Company, under the Ministry of Public Business Sector, was established by Law No. 203 of 1991. It aims to boost investment in Egypt's cotton, textile, and garment manufacturing and export sectors.",
-    "about_us_button" : "know more",
-    "news_title" : "latest news",
-    "news_button" : "show all news",
+  "homePage": {
+    "about_us_title": "The Cotton, Spinning, Weaving, and Ready-Made Garments Holding Company",
+    "about_us_description": "The Cotton, Spinning, Weaving, and Ready-Made Garments Holding Company, under the Ministry of Public Business Sector, was established by Law No. 203 of 1991. It aims to boost investment in Egypt's cotton, textile, and garment manufacturing and export sectors.",
+    "about_us_button": "know more",
+    "news_title": "latest news",
+    "news_button": "show all news",
     "partners_title": "our partners",
     "partners_button": "show all partners"
   },
-  "contactPage" : {
-    "contact_us" : "Contact Us",
-    "follow_us_on" : "Follow Us On",
-    "address" : "8 El-Sayed Mohammed Taher",
-    "full_name" : "Full Name",
-    "phone" : "Phone",
-    "email" : "Email",
-    "subject" : "Subject",
-    "message" : "Message",
-    "contact_button" : "contact us"
+  "contactPage": {
+    "contact_us": "Contact Us",
+    "follow_us_on": "Follow Us On",
+    "address": "8 El-Sayed Mohammed Taher",
+    "full_name": "Full Name",
+    "phone": "Phone",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "contact_button": "contact us"
   },
-  "aboutPage" : {},
-  "reportsPage" : {
-    "download" : "Download"
+  "aboutPage": {},
+  "reportsPage": {
+    "download": "Download"
   },
-  "footer" : {
-    "company_logo_text" : "Cotton & Textile Industries Holding",
-    "ministry_logo_text" : "Ministry Of Public Business Sector",
-    "browse" : "Browse",
-    "home" : "home",
-    "about_us" : "About Us",
-    "reports" : "Reports",
-    "group_structure" : "Group Structure",
-    "news" : "News",
-    "contact_us" : "Contact Us",
-    "follow_us_on" : "Follow Us On",
-    "address" : "8 El-Sayed Mohammed Taher",
-    "copyright_title" : "Privacy Policy and Disclaimer",
-    "copyright_description" : "© Holding Company for Cotton and Textiles (CTIHC) - 2024"
+  "groupStructurePage": {},
+  "newsPage": {},
+  "footer": {
+    "company_logo_text": "Cotton & Textile Industries Holding",
+    "ministry_logo_text": "Ministry Of Public Business Sector",
+    "browse": "Browse",
+    "home": "home",
+    "about_us": "About Us",
+    "reports": "Reports",
+    "group_structure": "Group Structure",
+    "news": "News",
+    "contact_us": "Contact Us",
+    "follow_us_on": "Follow Us On",
+    "address": "8 El-Sayed Mohammed Taher",
+    "copyright_title": "Privacy Policy and Disclaimer",
+    "copyright_description": "© Holding Company for Cotton and Textiles (CTIHC) - 2024"
   }
 }

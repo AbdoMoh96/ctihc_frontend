@@ -12,6 +12,10 @@ export const pathnames = {
     '/reports' : '/reports',
     '/group-structure': '/group-structure',
     '/news' : '/news',
+    '/news/[slug]': {
+        en: '/news/[slug]',
+        ar: '/news/[slug]'
+      },
     '/contact' : '/contact',
     '/partners' : '/partners'
 }

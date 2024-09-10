@@ -45,7 +45,7 @@ export default function AboutPage({params: {locale}} : AboutPageProps) {
     return (
         <>
             <main>
-                <AnimatedSection className="py-6 h-min-[70vh] mt-4 rtl:mr-6 ml-6" id='contact-section'>
+                <AnimatedSection className="py-6 min-h-[70vh] mt-4 rtl:mr-6 ml-6" id='contact-section'>
                    <AboutPageContent locale={locale}></AboutPageContent>
                 </AnimatedSection>
             </main>
