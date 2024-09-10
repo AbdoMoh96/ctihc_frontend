@@ -40,11 +40,8 @@ const AboutSection: React.FC<propTypes> = async ({locale}) => {
                 <p className='text-xl font-roboto rtl:font-cairo font-light text-center'>
                     {data?.home_page_description}
                 </p>
-                <Link href={'/about'}>
-                <button
-                    className='font-roboto transition-all ease-in-out duration-300 border border-black rounded-full py-1 px-2 hover:bg-zinc-800 hover:text-white'>
-                    {lang('about_us_button')}
-                </button>
+                <Link className='font-roboto rtl:font-cairo transition-all ease-in-out duration-300 border border-black rounded-full py-1 px-2 hover:bg-zinc-800 hover:text-white' href={'/about'}>
+                {lang('about_us_button')}
                 </Link>
             </Container>
         </AnimatedSection>
