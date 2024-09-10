@@ -1,4 +1,7 @@
 import React from 'react';
+import Container from '../Components/Layout/Container';
+import AnimatedSection from '@/Components/Animation/AnimatedSection';
+import News from './Components/News';
 import {useTranslations} from "next-intl";
 import {unstable_setRequestLocale} from 'next-intl/server';
 
@@ -16,7 +19,11 @@ export default function NewsPage({params: {locale}} : HomePageProps) {
     return (
       <>
           <main>
-              <h1>News</h1>
+          <Container className='min-h-[70vh]'>
+            <AnimatedSection>
+              <News locale={locale}/>
+            </AnimatedSection>
+           </Container>
           </main>
       </>
     );
