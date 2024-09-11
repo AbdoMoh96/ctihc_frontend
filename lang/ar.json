@@ -36,7 +36,9 @@
     "download": "تحميل"
   },
   "groupStructurePage": {},
-  "newsPage": {},
+  "newsPage": {
+    "more_button": "أعرض المزيد"
+  },
   "footer": {
     "company_logo_text": "الشركة القابضة للقطن والنسيج",
     "ministry_logo_text": "وزارة قطاع الأعمال العام",
