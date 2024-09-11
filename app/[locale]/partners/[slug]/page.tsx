@@ -6,7 +6,7 @@ import config from '@/helpers/config.helper';
 import ImageWrapper from '@/app/[locale]/Components/Layout/ImageWrapper';
 import {unstable_setRequestLocale} from 'next-intl/server';
 
-interface NewsItemPageProps {
+interface PartnerItemPageProps {
     params: {
         locale: "en" | "ar";
         slug: string;
@@ -14,7 +14,7 @@ interface NewsItemPageProps {
 }
 
 async function getData(locale: 'en' | 'ar', slug: string){
-    const response = await fetch(`${config.AppUrl}/client/news/getNewsItemBySlug`, {
+    const response = await fetch(`${config.AppUrl}/client/partners/getPartnerBySlug`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -29,9 +29,9 @@ async function getData(locale: 'en' | 'ar', slug: string){
     return response.json();
 }
 
-const NewsItemContent: React.FC<{locale: 'en'|'ar', slug: string}> = async ({locale, slug}) => {
+const PartnerItemContent: React.FC<{locale: 'en'|'ar', slug: string}> = async ({locale, slug}) => {
 
-    const newsItem = await getData(locale, slug);
+    const partnerItem = await getData(locale, slug);
 
 
 
@@ -40,19 +40,19 @@ const NewsItemContent: React.FC<{locale: 'en'|'ar', slug: string}> = async ({loc
          <ImageWrapper
          className='h-60 shadow-lg rounded lg:w-[50%] block mt-4'
          imageClass='rounded'
-         src={`${config.AppStorage}/${newsItem.thumbnail}`}
-         alt='news item image'/>
-         <h1 className='font-roboto rtl:font-cairo font-bold text-xl text-black border-b-2 border-b-amber-500 inline-block pb-2 mb-2 w-[50%]'>{newsItem?.title}</h1>
+         src={`${config.AppStorage}/${partnerItem.image}`}
+         alt='partner item image'/>
+         <h1 className='font-roboto rtl:font-cairo font-bold text-xl text-black border-b-2 border-b-amber-500 inline-block pb-2 mb-2 w-[50%]'>{partnerItem?.title}</h1>
          <div className='font-roboto rtl:font-cairo lg:w-[50%]'
-         dangerouslySetInnerHTML={{__html: newsItem?.description}}/>
+         dangerouslySetInnerHTML={{__html: partnerItem?.description}}/>
    </div>
    )
 }
 
-export default function NewsViewPage({params: {locale, slug}} : NewsItemPageProps) {
+export default function PartnerViewPage({params: {locale, slug}} : PartnerItemPageProps) {
    unstable_setRequestLocale(locale);
 
-   const lang = useTranslations('newsPage');
+   const lang = useTranslations('partnersPage');
 
 
 
@@ -61,7 +61,7 @@ export default function NewsViewPage({params: {locale, slug}} : NewsItemPageProp
           <main>
           <Container className='min-h-[70vh]'>
             <AnimatedSection>
-               <NewsItemContent locale={locale} slug={slug}/>
+               <PartnerItemContent locale={locale} slug={slug}/>
             </AnimatedSection>
           </Container>
           </main>
