@@ -36,14 +36,14 @@ const PartnerItemContent: React.FC<{locale: 'en'|'ar', slug: string}> = async ({
 
 
    return (
-   <div className='flex flex-col gap-6'>
+   <div className='flex flex-col lg:w-[50%] mx-auto gap-6 my-20'>
          <ImageWrapper
-         className='h-60 shadow-lg rounded lg:w-[50%] block mt-4'
+         className='h-72 w-72 mx-auto shadow-lg rounded block mt-4'
          imageClass='rounded'
          src={`${config.AppStorage}/${partnerItem.image}`}
          alt='partner item image'/>
-         <h1 className='font-roboto rtl:font-cairo font-bold text-xl text-black border-b-2 border-b-amber-500 inline-block pb-2 mb-2 w-[50%]'>{partnerItem?.title}</h1>
-         <div className='font-roboto rtl:font-cairo lg:w-[50%]'
+         <h1 className='font-roboto text-center rtl:font-cairo font-bold text-xl text-black border-b-2 border-b-amber-500 inline-block pb-2 mb-2'>{partnerItem?.title}</h1>
+         <div className='text-center font-roboto rtl:font-cairo'
          dangerouslySetInnerHTML={{__html: partnerItem?.description}}/>
    </div>
    )
