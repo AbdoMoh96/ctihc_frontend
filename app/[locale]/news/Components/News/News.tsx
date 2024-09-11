@@ -1,6 +1,7 @@
 'use client'
 import React, {useEffect, useState} from 'react';
 import config from '@/helpers/config.helper';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/helpers/navigation';
 
 interface propTypes {
@@ -30,6 +31,7 @@ const News: React.FC<propTypes> = ({locale}) => {
 
   const [news, setNews] = useState<Array<object>>([]);
   const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(false);
+  const trans = useTranslations('newsPage');
   const [page, setPage] = useState<number>(1);
 
   useEffect(() => {
@@ -70,7 +72,7 @@ const News: React.FC<propTypes> = ({locale}) => {
   onClick={handelLoadMore}
   disabled={isButtonDisabled}
  >
-     Load More
+     {trans('more_button')}
  </button>
 </>
 );
