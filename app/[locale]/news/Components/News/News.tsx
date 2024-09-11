@@ -7,7 +7,7 @@ interface propTypes {
     locale: 'en'|'ar';
 }
 
-async function getData(locale: 'en' | 'ar'){
+async function getData(locale: 'en' | 'ar', page: number){
     const response = await fetch(`${config.AppUrl}/client/news/getAllNews`, {
         method: 'POST',
         headers: {
@@ -16,7 +16,7 @@ async function getData(locale: 'en' | 'ar'){
         },
         body: JSON.stringify({
             "limit" : null,
-            "page" : 1,
+            "page" : page,
             "order" : null,
             "filter" : null
         }),
@@ -28,16 +28,28 @@ async function getData(locale: 'en' | 'ar'){
 
 const News: React.FC<propTypes> = ({locale}) => {
 
-  const [news, setNews] = useState<{data: Array<object>}>({data: []});
+  const [news, setNews] = useState<Array<object>>([]);
+  const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(false);
+  const [page, setPage] = useState<number>(1);
 
   useEffect(() => {
-     getData(locale).then(data => setNews(data));
-  }, [locale]);
+     getData(locale, page).then((response: {data: Array<object>, to: number, total: number}) => {
+        setNews([ ...news, ...response.data]);
+        if(response.to === response.total){
+           setIsButtonDisabled(true);
+        }
+    });
+  }, [page]);
+
+  const handelLoadMore = async () => {
+    setPage(state => state + 1);
+  }
 
   return (
+    <>
     <div className='w-full py-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10'>
 
-    {news?.data?.map((newsItem: any) => {
+    {news?.map((newsItem: any) => {
         return <Link
             href={{
                 pathname: '/news/[slug]',
@@ -51,7 +63,16 @@ const News: React.FC<propTypes> = ({locale}) => {
         </Link>
     })}
 
+
 </div>
+<button
+className='block mx-auto my-5 font-roboto rtl:font-cairo transition-all ease-in-out duration-300 border border-black rounded-full py-1 px-2 hover:bg-zinc-800 hover:text-white'
+onClick={handelLoadMore}
+disabled={isButtonDisabled}
+>
+    Load More
+</button>
+</>
 );
 }
 
