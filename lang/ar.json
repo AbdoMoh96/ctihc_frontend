@@ -9,6 +9,7 @@
     "reports": "التقارير",
     "group_structure": "هيكل المجموعة",
     "news": "الأخبار",
+    "partners": "الشركاء",
     "contact_us": "اتصل بنا"
   },
   "homePage": {
@@ -37,6 +38,9 @@
   },
   "groupStructurePage": {},
   "newsPage": {
+    "more_button": "أعرض المزيد"
+  },
+  "partnersPage": {
     "more_button": "أعرض المزيد"
   },
   "footer": {

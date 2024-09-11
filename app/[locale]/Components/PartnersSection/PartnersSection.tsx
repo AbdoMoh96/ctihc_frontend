@@ -37,8 +37,14 @@ const PartnersSection : React.FC<propTypes> = async ({locale}) => {
             <div className='w-full py-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10'>
 
                 {partners?.map((partner: any) => {
-                    return <div
-                        key={partner.id}
+                    return <Link href={{
+                        pathname: '/partners/[slug]',
+                        params: {slug: partner.slug}
+                      }}
+                      key={partner.id}
+                      >
+                      <div
+
                         className='w-full flex flex-col shadow-xl h-96 rounded-2xl cursor-pointer transition-all duration-300 ease-in-out lg:hover:scale-105'>
                         <div
                             className='rounded-t-2xl  bg-cover h-[100%]' style={{ backgroundImage: "url(" + `${config.AppStorage}/${partner.image}` + ")" }}/>
@@ -49,11 +55,12 @@ const PartnersSection : React.FC<propTypes> = async ({locale}) => {
                             </h4>
                         </div>
                     </div>
+                    </Link>
                 })}
 
             </div>
             <Link
-                href='/news'
+                href='/partners'
                 className='font-roboto rtl:font-cairo transition-all ease-in-out duration-300 border border-black rounded-full py-1 px-2 hover:bg-zinc-800 hover:text-white'>
                 {lang('partners_button')}
             </Link>
