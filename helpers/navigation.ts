@@ -16,8 +16,12 @@ export const pathnames = {
         en: '/news/[slug]',
         ar: '/news/[slug]'
       },
+    '/partners' : '/partners',
+    '/partners/[slug]': {
+        en: '/partners/[slug]',
+        ar: '/partners/[slug]'
+      },
     '/contact' : '/contact',
-    '/partners' : '/partners'
 }
 
 export const {Link, getPathname, redirect, usePathname, useRouter} =

@@ -9,6 +9,7 @@
     "reports": "Reports",
     "group_structure": "Group Structure",
     "news": "News",
+    "partners": "Partners",
     "contact_us": "Contact Us"
   },
   "homePage": {
@@ -37,6 +38,9 @@
   },
   "groupStructurePage": {},
   "newsPage": {
+    "more_button": "View More"
+  },
+  "partnersPage": {
     "more_button": "View More"
   },
   "footer": {
