@@ -36,7 +36,9 @@
     "download": "Download"
   },
   "groupStructurePage": {},
-  "newsPage": {},
+  "newsPage": {
+    "more_button": "View More"
+  },
   "footer": {
     "company_logo_text": "Cotton & Textile Industries Holding",
     "ministry_logo_text": "Ministry Of Public Business Sector",

@@ -51,10 +51,9 @@ const NewsSection : React.FC<propTypes> = async ({locale}) => {
                 })}
 
             </div>
-            <button
-                className='font-roboto rtl:font-cairo transition-all ease-in-out duration-300 border border-black rounded-full py-1 px-2 hover:bg-zinc-800 hover:text-white'>
+            <Link className='font-roboto rtl:font-cairo transition-all ease-in-out duration-300 border border-black rounded-full py-1 px-2 hover:bg-zinc-800 hover:text-white' href='/news'>
                 {lang('news_button')}
-            </button>
+            </Link>
         </Container>
     </AnimatedSection>
 }

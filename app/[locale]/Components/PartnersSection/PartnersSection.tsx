@@ -1,5 +1,6 @@
 import React from 'react';
 import {useTranslations} from "next-intl";
+import { Link } from '@/helpers/navigation';
 import Container from "@/app/[locale]/Components/Layout/Container";
 import AnimatedSection from "@/Components/Animation/AnimatedSection";
 import config from '@/helpers/config.helper';
@@ -51,10 +52,11 @@ const PartnersSection : React.FC<propTypes> = async ({locale}) => {
                 })}
 
             </div>
-            <button
+            <Link
+                href='/news'
                 className='font-roboto rtl:font-cairo transition-all ease-in-out duration-300 border border-black rounded-full py-1 px-2 hover:bg-zinc-800 hover:text-white'>
                 {lang('partners_button')}
-            </button>
+            </Link>
         </Container>
     </AnimatedSection>
 }
