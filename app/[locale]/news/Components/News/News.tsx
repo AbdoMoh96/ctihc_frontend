@@ -65,13 +65,13 @@ const News: React.FC<propTypes> = ({locale}) => {
 
 
 </div>
-<button
-className='block mx-auto my-5 font-roboto rtl:font-cairo transition-all ease-in-out duration-300 border border-black rounded-full py-1 px-2 hover:bg-zinc-800 hover:text-white'
-onClick={handelLoadMore}
-disabled={isButtonDisabled}
->
-    Load More
-</button>
+ <button
+  className='block mx-auto my-5 font-roboto rtl:font-cairo transition-all ease-in-out duration-300 border border-black rounded-full py-1 px-2 hover:bg-zinc-800 hover:text-white disabled:border-gray-400 disabled:text-gray-400 disabled:hover:bg-white'
+  onClick={handelLoadMore}
+  disabled={isButtonDisabled}
+ >
+     Load More
+ </button>
 </>
 );
 }
