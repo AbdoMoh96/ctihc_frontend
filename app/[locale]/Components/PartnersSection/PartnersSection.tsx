@@ -1,5 +1,5 @@
 import React from 'react';
-import {useTranslations} from "next-intl";
+import {getTranslations} from "next-intl/server";
 import { Link } from '@/helpers/navigation';
 import Container from "@/app/[locale]/Components/Layout/Container";
 import AnimatedSection from "@/Components/Animation/AnimatedSection";
@@ -27,7 +27,7 @@ async function getData(locale: 'en' | 'ar'){
 
 const PartnersSection : React.FC<propTypes> = async ({locale}) => {
 
-    const lang = useTranslations('homePage');
+    const lang = await getTranslations('homePage');
 
     let partners = await getData(locale);
 

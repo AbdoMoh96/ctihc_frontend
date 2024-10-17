@@ -23,7 +23,7 @@ const AnimatedSection = ({ children, className, id }: propTypes) => {
         if(isInView){
           animationState.start('visible').catch();
         }
-    }, [isInView]);
+    }, [isInView, animationState]);
 
     return (
         <section ref={ref} className={`${className} relative overflow-hidden `} id={id}>

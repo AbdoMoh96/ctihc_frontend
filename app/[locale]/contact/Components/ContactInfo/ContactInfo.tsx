@@ -3,7 +3,7 @@ import {CiLocationOn} from "react-icons/ci";
 import config from '@/helpers/config.helper';
 import {LuPhone} from "react-icons/lu";
 import {MdOutlineEmail, MdOutlineFax} from "react-icons/md";
-import {useTranslations} from "next-intl";
+import {getTranslations} from "next-intl/server";
 
 interface propTypes {
     locale : 'en' | 'ar'
@@ -26,7 +26,7 @@ async function getData(locale: 'en' | 'ar'){
 }
 
 const ContactInfo: React.FC<propTypes> = async ({locale}) => {
-    const lang = useTranslations('contactPage');
+    const lang = await getTranslations('contactPage');
     let contactUs : any = await getData(locale);
 
     return <div

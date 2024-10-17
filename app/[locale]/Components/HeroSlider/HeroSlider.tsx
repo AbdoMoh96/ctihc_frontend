@@ -41,7 +41,7 @@ const HeroSlider : React.FC<propTypes> = () => {
         }).then(response => response.json())
           .then(data => setSlides(data));
 
-    }, []);
+    }, [locale]);
 
     return <Swiper
         modules={[Navigation, Pagination, Parallax, Autoplay, Scrollbar, A11y]}
