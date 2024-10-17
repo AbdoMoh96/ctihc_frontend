@@ -3,7 +3,7 @@ import config from '@/helpers/config.helper';
 import Container from "@/app/[locale]/Components/Layout/Container";
 import AnimatedSection from "@/Components/Animation/AnimatedSection";
 import { Link } from '@/helpers/navigation';
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 interface propTypes {
     locale: 'en' | 'ar'
@@ -27,7 +27,7 @@ async function getData(locale: 'en' | 'ar'){
 
 const AboutSection: React.FC<propTypes> = async ({locale}) => {
 
-    const lang = useTranslations('homePage');
+    const lang = await getTranslations('homePage');
 
     const data = await getData(locale);
 
