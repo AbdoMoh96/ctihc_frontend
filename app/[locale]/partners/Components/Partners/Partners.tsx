@@ -35,16 +35,22 @@ const Partners: React.FC<propTypes> = ({locale}) => {
   const [page, setPage] = useState<number>(1);
 
   useEffect(() => {
-     getData(locale, page).then((response: {data: Array<object>, to: number, total: number}) => {
+     getData(locale, 1).then((response: {data: Array<object>, to: number, total: number}) => {
+        setPartners([...response.data]);
+        if(response.to === response.total){
+           setIsButtonDisabled(true);
+        }
+    });
+  }, [locale]);
+
+  const handelLoadMore = async () => {
+    setPage(state => state + 1);
+    getData(locale, page + 1).then((response: {data: Array<object>, to: number, total: number}) => {
         setPartners([ ...partners, ...response.data]);
         if(response.to === response.total){
            setIsButtonDisabled(true);
         }
     });
-  }, [page]);
-
-  const handelLoadMore = async () => {
-    setPage(state => state + 1);
   }
 
   return (
