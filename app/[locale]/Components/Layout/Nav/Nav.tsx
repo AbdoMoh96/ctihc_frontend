@@ -52,7 +52,7 @@ const Nav: React.FC<propTypes> = () => {
         }).then(response => response.json())
           .then(data => setData(data));
 
-    }, []);
+    }, [locale]);
 
     useEffect(() => {
         if(showMenu){

@@ -7,7 +7,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { LuPhone } from "react-icons/lu";
 import { MdOutlineFax } from "react-icons/md";
 import { MdOutlineEmail } from "react-icons/md";
-import {useTranslations} from "next-intl";
+import {getTranslations} from "next-intl/server";
 import config from '@/helpers/config.helper';
 import Image from 'next/image';
 import Link from "next/link";
@@ -51,7 +51,7 @@ async function getData(locale: 'en' | 'ar'){
 
 const Footer: React.FC<propTypes> = async ({locale}) => {
 
-    const lang = useTranslations('footer');
+    const lang = await getTranslations('footer');
     const { contactUs, settings } = await getData(locale);
 
 

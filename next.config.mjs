@@ -8,11 +8,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "appwrite.abdomoh.com",
-      },
-      {
-        protocol: "https",
-        hostname: "api.ctihc.abdomoh.com",
+        hostname: "landing.ctihc.com",
       },
     ],
   },
