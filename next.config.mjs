@@ -10,6 +10,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "landing.ctihc.com",
       },
+      {
+        protocol: "https",
+        hostname: "storage-api.ctihc.com",
+      },
     ],
   },
 };
